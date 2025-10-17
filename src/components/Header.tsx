@@ -26,14 +26,7 @@ const Header = () => {
             to="/"
             className="flex items-center space-x-3 transition-smooth hover:opacity-80"
           >
-            <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center shadow-card">
-              <span className="text-xl font-bold text-primary-foreground">
-                ST
-              </span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-              SarayaTech
-            </span>
+            <img src="/logo.png" alt="Company Logo" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
