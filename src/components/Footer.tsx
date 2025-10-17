@@ -10,11 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Column 1 - Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <span className="text-xl font-bold text-primary">ST</span>
-              </div>
-              <span className="text-xl font-bold">SarayaTech</span>
+            <Link
+              to="/"
+              className="flex items-center space-x-3 transition-smooth hover:opacity-80"
+            >
+              <img src="/logo.png" alt="Company Logo" className="h-16 w-auto" />
             </Link>
             <p className="text-sm text-primary-foreground/80 mb-6">
               Empowering enterprises with innovative technology solutions for
