@@ -10,6 +10,9 @@ import Solutions from "./pages/Solutions";
 import SuccessStories from "./pages/SuccessStories";
 import Insights from "./pages/Insights";
 import CloudPlatform from "./pages/solutions/CloudPlatform";
+import DataAnalytics from "./pages/solutions/DataAnalytics";
+import EnterpriseSoftware from "./pages/solutions/EnterpriseSoftware";
+import Industries from "./pages/Industries";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/solutions/cloud-platform" element={<CloudPlatform />} />
+          <Route path="/solutions/data-analytics" element={<DataAnalytics />} />
+          <Route path="/solutions/enterprise-software" element={<EnterpriseSoftware />} />
+          <Route path="/industries" element={<Industries />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/insights" element={<Insights />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
