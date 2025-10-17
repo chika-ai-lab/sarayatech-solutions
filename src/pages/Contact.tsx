@@ -1,16 +1,18 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Header />
-      
       <main>
         {/* Hero Section */}
         <section className="pt-32 pb-20 gradient-primary text-primary-foreground">
@@ -20,7 +22,8 @@ const Contact = () => {
                 Let's Start a Conversation
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-                Our team is ready to help you transform your business. Reach out today.
+                Our team is ready to help you transform your business. Reach out
+                today.
               </p>
             </div>
           </div>
@@ -35,7 +38,8 @@ const Contact = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
                   <p className="text-secondary leading-relaxed">
-                    Have questions? We're here to help. Our team typically responds within 24 hours.
+                    Have questions? We're here to help. Our team typically
+                    responds within 24 hours.
                   </p>
                 </div>
 
@@ -47,8 +51,10 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Headquarters</div>
                       <div className="text-secondary text-sm">
-                        123 Innovation Drive<br />
-                        Columbus, OH 43215<br />
+                        123 Innovation Drive
+                        <br />
+                        Columbus, OH 43215
+                        <br />
                         United States
                       </div>
                     </div>
@@ -85,7 +91,8 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Business Hours</div>
                       <div className="text-secondary text-sm">
-                        Monday - Friday: 9am - 6pm EST<br />
+                        Monday - Friday: 9am - 6pm EST
+                        <br />
                         Saturday - Sunday: Closed
                       </div>
                     </div>
@@ -97,37 +104,53 @@ const Contact = () => {
               <div className="lg:col-span-2">
                 <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border">
                   <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
-                  
+
                   <form className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium mb-2">First Name *</label>
+                        <label className="block text-sm font-medium mb-2">
+                          First Name *
+                        </label>
                         <Input placeholder="John" required />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">Last Name *</label>
+                        <label className="block text-sm font-medium mb-2">
+                          Last Name *
+                        </label>
                         <Input placeholder="Doe" required />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-2">Company</label>
+                      <label className="block text-sm font-medium mb-2">
+                        Company
+                      </label>
                       <Input placeholder="Your Company Name" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-sm font-medium mb-2">Email *</label>
-                        <Input type="email" placeholder="john@company.com" required />
+                        <label className="block text-sm font-medium mb-2">
+                          Email *
+                        </label>
+                        <Input
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">Phone</label>
+                        <label className="block text-sm font-medium mb-2">
+                          Phone
+                        </label>
                         <Input type="tel" placeholder="+1 (555) 000-0000" />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-2">Subject *</label>
+                      <label className="block text-sm font-medium mb-2">
+                        Subject *
+                      </label>
                       <Select required>
                         <SelectTrigger>
                           <SelectValue placeholder="Select a subject" />
@@ -135,8 +158,12 @@ const Contact = () => {
                         <SelectContent>
                           <SelectItem value="demo">Request a Demo</SelectItem>
                           <SelectItem value="sales">Sales Inquiry</SelectItem>
-                          <SelectItem value="support">Technical Support</SelectItem>
-                          <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                          <SelectItem value="support">
+                            Technical Support
+                          </SelectItem>
+                          <SelectItem value="partnership">
+                            Partnership Opportunity
+                          </SelectItem>
                           <SelectItem value="press">Press & Media</SelectItem>
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
@@ -144,20 +171,27 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium mb-2">Message *</label>
-                      <Textarea 
+                      <label className="block text-sm font-medium mb-2">
+                        Message *
+                      </label>
+                      <Textarea
                         placeholder="Tell us about your needs..."
                         rows={6}
                         required
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent-light shadow-card">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full bg-accent hover:bg-accent-light shadow-card"
+                    >
                       Send Message
                     </Button>
 
                     <p className="text-sm text-secondary text-center">
-                      We respect your privacy. Your information will never be shared.
+                      We respect your privacy. Your information will never be
+                      shared.
                     </p>
                   </form>
                 </div>
@@ -177,8 +211,6 @@ const Contact = () => {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 };

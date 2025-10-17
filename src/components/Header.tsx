@@ -10,7 +10,7 @@ const Header = () => {
   const navigation = [
     { name: "Solutions", path: "/solutions" },
     { name: "Industries", path: "/industries" },
-    { name: "Success Stories", path: "/success-stories" },
+    { name: "Realisation", path: "/realisation" },
     { name: "Insights", path: "/insights" },
     { name: "About", path: "/about" },
   ];
@@ -22,9 +22,14 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 transition-smooth hover:opacity-80">
+          <Link
+            to="/"
+            className="flex items-center space-x-3 transition-smooth hover:opacity-80"
+          >
             <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center shadow-card">
-              <span className="text-xl font-bold text-primary-foreground">ST</span>
+              <span className="text-xl font-bold text-primary-foreground">
+                ST
+              </span>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
               SarayaTech
@@ -46,7 +51,9 @@ const Header = () => {
                 {item.name}
                 <span
                   className={`absolute -bottom-2 left-0 w-full h-0.5 bg-primary transform origin-left transition-smooth ${
-                    isActive(item.path) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    isActive(item.path)
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
               </Link>
@@ -56,7 +63,10 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link to="/contact">
-              <Button variant="ghost" className="text-secondary hover:text-primary">
+              <Button
+                variant="ghost"
+                className="text-secondary hover:text-primary"
+              >
                 Contact Us
               </Button>
             </Link>
@@ -94,12 +104,20 @@ const Header = () => {
               </Link>
             ))}
             <div className="px-4 pt-4 space-y-3 border-t border-border">
-              <Link to="/contact" className="block" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                to="/contact"
+                className="block"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 <Button variant="outline" className="w-full">
                   Contact Us
                 </Button>
               </Link>
-              <Link to="/contact" className="block" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                to="/contact"
+                className="block"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 <Button className="w-full bg-accent hover:bg-accent-light">
                   Request Demo
                 </Button>

@@ -17,19 +17,32 @@ const Footer = () => {
               <span className="text-xl font-bold">SarayaTech</span>
             </Link>
             <p className="text-sm text-primary-foreground/80 mb-6">
-              Empowering enterprises with innovative technology solutions for digital transformation.
+              Empowering enterprises with innovative technology solutions for
+              digital transformation.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth"
+              >
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth"
+              >
                 <Twitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth"
+              >
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-smooth"
+              >
                 <Youtube size={18} />
               </a>
             </div>
@@ -37,25 +50,39 @@ const Footer = () => {
 
           {/* Column 2 - Solutions */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">Solutions</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">
+              Solutions
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/solutions/cloud-platform" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/solutions/cloud-platform"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Cloud Platform
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/data-analytics" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/solutions/data-analytics"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Data Analytics
                 </Link>
               </li>
               <li>
-                <Link to="/solutions/enterprise-software" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/solutions/enterprise-software"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Enterprise Software
                 </Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/solutions"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   View All Solutions
                 </Link>
               </li>
@@ -64,25 +91,39 @@ const Footer = () => {
 
           {/* Column 3 - Company */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">Company</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">
+              Company
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/about"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/careers" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/careers"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="/newsroom" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/newsroom"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Newsroom
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/contact"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Contact
                 </Link>
               </li>
@@ -91,25 +132,39 @@ const Footer = () => {
 
           {/* Column 4 - Resources */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">Resources</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">
+              Resources
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/insights" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/insights"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Blog & Insights
                 </Link>
               </li>
               <li>
-                <Link to="/success-stories" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
-                  Success Stories
+                <Link
+                  to="/realisation"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
+                  Realisation
                 </Link>
               </li>
               <li>
-                <Link to="/documentation" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/documentation"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link to="/support" className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <Link
+                  to="/support"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
+                >
                   Support
                 </Link>
               </li>
@@ -118,7 +173,9 @@ const Footer = () => {
 
           {/* Column 5 - Newsletter */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">Stay Updated</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider mb-6">
+              Stay Updated
+            </h3>
             <p className="text-sm text-primary-foreground/80 mb-4">
               Get the latest insights and updates delivered to your inbox.
             </p>
@@ -142,13 +199,22 @@ const Footer = () => {
               © 2024 SarayaTech. All rights reserved. | Columbus, Ohio
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <Link
+                to="/privacy"
+                className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+              >
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <Link
+                to="/terms"
+                className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+              >
                 Terms of Service
               </Link>
-              <Link to="/cookies" className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth">
+              <Link
+                to="/cookies"
+                className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-smooth"
+              >
                 Cookie Policy
               </Link>
             </div>
