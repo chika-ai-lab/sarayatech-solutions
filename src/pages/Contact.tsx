@@ -8,9 +8,56 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    subject: "demo",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from("contact_messages")
+        .insert([formData]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Message envoyé",
+        description: "Nous vous répondrons dans les plus brefs délais.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        subject: "demo",
+        message: "",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Erreur",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <main>
@@ -105,30 +152,21 @@ const Contact = () => {
                 <div className="bg-card rounded-2xl p-8 shadow-elegant border border-border">
                   <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
 
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">
-                          First Name *
+                          Nom *
                         </label>
-                        <Input placeholder="John" required />
+                        <Input
+                          placeholder="John Doe"
+                          required
+                          value={formData.name}
+                          onChange={(e) =>
+                            setFormData({ ...formData, name: e.target.value })
+                          }
+                        />
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">
-                          Last Name *
-                        </label>
-                        <Input placeholder="Doe" required />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Company
-                      </label>
-                      <Input placeholder="Your Company Name" />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">
                           Email *
@@ -137,35 +175,52 @@ const Contact = () => {
                           type="email"
                           placeholder="john@company.com"
                           required
+                          value={formData.email}
+                          onChange={(e) =>
+                            setFormData({ ...formData, email: e.target.value })
+                          }
                         />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium mb-2">
-                          Phone
-                        </label>
-                        <Input type="tel" placeholder="+1 (555) 000-0000" />
                       </div>
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        Subject *
+                        Entreprise
                       </label>
-                      <Select required>
+                      <Input
+                        placeholder="Votre entreprise"
+                        value={formData.company}
+                        onChange={(e) =>
+                          setFormData({ ...formData, company: e.target.value })
+                        }
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Sujet *
+                      </label>
+                      <Select
+                        required
+                        value={formData.subject}
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, subject: value })
+                        }
+                      >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select a subject" />
+                          <SelectValue placeholder="Sélectionnez un sujet" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="demo">Request a Demo</SelectItem>
-                          <SelectItem value="sales">Sales Inquiry</SelectItem>
+                          <SelectItem value="demo">Demande de démo</SelectItem>
+                          <SelectItem value="sales">Vente</SelectItem>
                           <SelectItem value="support">
-                            Technical Support
+                            Support technique
                           </SelectItem>
                           <SelectItem value="partnership">
-                            Partnership Opportunity
+                            Partenariat
                           </SelectItem>
-                          <SelectItem value="press">Press & Media</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="press">Presse</SelectItem>
+                          <SelectItem value="other">Autre</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -175,9 +230,13 @@ const Contact = () => {
                         Message *
                       </label>
                       <Textarea
-                        placeholder="Tell us about your needs..."
+                        placeholder="Parlez-nous de vos besoins..."
                         rows={6}
                         required
+                        value={formData.message}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
                       />
                     </div>
 
@@ -185,13 +244,13 @@ const Contact = () => {
                       type="submit"
                       size="lg"
                       className="w-full bg-accent hover:bg-accent-light shadow-card"
+                      disabled={loading}
                     >
-                      Send Message
+                      {loading ? "Envoi..." : "Envoyer le message"}
                     </Button>
 
                     <p className="text-sm text-secondary text-center">
-                      We respect your privacy. Your information will never be
-                      shared.
+                      Nous respectons votre vie privée. Vos informations ne seront jamais partagées.
                     </p>
                   </form>
                 </div>
