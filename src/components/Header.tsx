@@ -8,6 +8,7 @@ const Header = () => {
   const location = useLocation();
 
   const navigation = [
+    { name: "Home", path: "/" },
     { name: "Solutions", path: "/solutions" },
     { name: "Industries", path: "/industries" },
     { name: "Realisation", path: "/realisation" },
@@ -56,16 +57,8 @@ const Header = () => {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link to="/contact">
-              <Button
-                variant="ghost"
-                className="text-secondary hover:text-primary"
-              >
-                Contact Us
-              </Button>
-            </Link>
-            <Link to="/contact">
               <Button className="bg-accent hover:bg-accent-light shadow-card">
-                Request Demo
+                Get in touch
               </Button>
             </Link>
           </div>

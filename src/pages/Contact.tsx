@@ -51,9 +51,9 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Headquarters</div>
                       <div className="text-secondary text-sm">
-                        123 Innovation Drive
+                        2765 s Hamilton
                         <br />
-                        Columbus, OH 43215
+                        rd Columbus oh 43232
                         <br />
                         United States
                       </div>
@@ -67,7 +67,7 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Phone</div>
                       <div className="text-secondary text-sm">
-                        +1 (614) 555-0100
+                        +1 (614)-783-0443
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                     <div>
                       <div className="font-semibold mb-1">Email</div>
                       <div className="text-secondary text-sm">
-                        contact@sarayatech.com
+                        info@sarayatech.com
                       </div>
                     </div>
                   </div>
@@ -202,13 +202,16 @@ const Contact = () => {
 
         {/* Map Section */}
         <section className="h-96 bg-muted">
-          <div className="w-full h-full flex items-center justify-center text-secondary">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">Map integration placeholder</p>
-              <p className="text-sm">Columbus, Ohio</p>
-            </div>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0877519854157!2d-82.88723862460068!3d39.91705238590096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387d37fcc2e35d%3A0x6c3ae3509bc1bb63!2s2765%20S%20Hamilton%20Rd%2C%20Columbus%2C%20OH%2043232%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2ssn!4v1760957415959!5m2!1sfr!2ssn"
+            style={{
+              width: "100%",
+              height: "384px",
+              border: "none",
+            }}
+            loading="lazy"
+            allowFullScreen
+          ></iframe>
         </section>
       </main>
     </div>
