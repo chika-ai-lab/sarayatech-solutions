@@ -235,13 +235,29 @@ const Industries = () => {
         </motion.section>
 
         {/* CTA Section */}
-        <section className="relative py-32 bg-gradient-to-r from-primary via-primary/90 to-accent overflow-hidden">
+        <motion.section
+          className="relative py-32 bg-gradient-to-r from-primary via-primary/90 to-accent overflow-hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           {/* Decorative Element */}
-          <div className="absolute top-4 right-4 w-12 h-12 bg-gold/30 rounded-full blur-lg"></div>
+          <motion.div
+            className="absolute top-4 right-4 w-12 h-12 bg-gold/30 rounded-full blur-lg"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
 
           <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center space-y-8">
-              <div className="space-y-4">
+              <motion.div
+                className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
                 <h2 className="text-5xl md:text-6xl font-black text-primary-foreground leading-tight">
                   Ready to Transform Your Industry?
                 </h2>
@@ -249,19 +265,35 @@ const Industries = () => {
                   Join hundreds of companies that trust our industry-specific
                   solutions to drive their digital transformation.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button className="px-8 py-3 bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold rounded-lg hover:shadow-xl transition-all duration-300">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <motion.button
+                  variants={staggerItemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-bold rounded-lg hover:shadow-xl transition-all duration-300"
+                >
                   Start Free Trial
-                </button>
-                <button className="px-8 py-3 border-2 border-primary-foreground text-primary-foreground font-bold rounded-lg hover:bg-primary-foreground/10 transition-all duration-300">
+                </motion.button>
+                <motion.button
+                  variants={staggerItemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 border-2 border-primary-foreground text-primary-foreground font-bold rounded-lg hover:bg-primary-foreground/10 transition-all duration-300"
+                >
                   Schedule Demo
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
     </div>
   );
