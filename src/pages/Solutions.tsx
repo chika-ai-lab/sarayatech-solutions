@@ -54,7 +54,12 @@ const Solutions = () => {
       {/* Hero */}
       <section className="pt-32 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in-up">
+          <motion.div
+            className="max-w-4xl mx-auto text-center space-y-6"
+            variants={fadeInUpVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
               Our <span className="text-primary">Solutions</span>
             </h1>
@@ -63,29 +68,29 @@ const Solutions = () => {
               implementations. Each project represents our commitment to
               excellence and creative problem-solving.
             </p>
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-12">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                150+
-              </div>
-              <div className="text-sm text-secondary">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                98%
-              </div>
-              <div className="text-sm text-secondary">Client Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">
-                5+
-              </div>
-              <div className="text-sm text-secondary">Years Experience</div>
-            </div>
-          </div>
+          <motion.div
+            className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { value: "150+", label: "Projects Completed", color: "text-primary" },
+              { value: "98%", label: "Client Satisfaction", color: "text-accent" },
+              { value: "5+", label: "Years Experience", color: "text-gold" },
+            ].map((stat) => (
+              <motion.div key={stat.label} variants={staggerItemVariants} className="text-center">
+                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  {stat.value}
+                </div>
+                <div className="text-sm text-secondary">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
