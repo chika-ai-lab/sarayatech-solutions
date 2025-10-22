@@ -24,7 +24,12 @@ const About = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-primary text-primary-foreground overflow-hidden">
+      <motion.section
+        className="relative pt-32 pb-20 bg-primary text-primary-foreground overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="absolute inset-0 opacity-20">
           <img
             src={teamPhoto}
@@ -35,7 +40,12 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-primary opacity-90" />
 
         <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in-up">
+          <motion.div
+            className="max-w-4xl mx-auto text-center space-y-6"
+            variants={fadeInUpVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
               Building the Future of{" "}
               <span className="text-gold">Enterprise Technology</span>
@@ -44,9 +54,9 @@ const About = () => {
               Since 2009, we've been empowering organizations to achieve
               extraordinary outcomes through innovative technology solutions.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission Section */}
       <section className="py-24 bg-background">
