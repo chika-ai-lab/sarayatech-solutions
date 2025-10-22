@@ -132,6 +132,7 @@ export const realisations = [
     quote:
       "SarayaTech transformed our entire digital infrastructure. The platform's scalability allowed us to handle 10x growth without breaking a sweat.",
     author: "Michael Chen",
+    image: "",
     role: "CTO",
   },
   {
@@ -149,6 +150,7 @@ export const realisations = [
     quote:
       "The analytics platform gave us insights we never knew existed. We reduced operational costs by 40% in the first quarter alone.",
     author: "Sarah Martinez",
+    image: "",
     role: "VP of Operations",
   },
   {
@@ -166,6 +168,7 @@ export const realisations = [
     quote:
       "Implementation was seamless, integration was flawless, and support has been exceptional. Our time-to-market decreased by 60%.",
     author: "David Thompson",
+    image: "",
     role: "Chief Innovation Officer",
   },
 ];
