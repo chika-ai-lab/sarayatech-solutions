@@ -8,7 +8,13 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SOLUTIONS_DATA } from "@/constants/solutions";
+import {
+  containerVariants,
+  fadeInUpVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
 
 const iconMap = {
   Cloud,
@@ -48,7 +54,12 @@ const Solutions = () => {
       {/* Hero */}
       <section className="pt-32 pb-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in-up">
+          <motion.div
+            className="max-w-4xl mx-auto text-center space-y-6"
+            variants={fadeInUpVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
               Our <span className="text-primary">Solutions</span>
             </h1>
@@ -57,29 +68,29 @@ const Solutions = () => {
               implementations. Each project represents our commitment to
               excellence and creative problem-solving.
             </p>
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-12">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                150+
-              </div>
-              <div className="text-sm text-secondary">Projects Completed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-                98%
-              </div>
-              <div className="text-sm text-secondary">Client Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gold mb-2">
-                5+
-              </div>
-              <div className="text-sm text-secondary">Years Experience</div>
-            </div>
-          </div>
+          <motion.div
+            className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mt-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { value: "150+", label: "Projects Completed", color: "text-primary" },
+              { value: "98%", label: "Client Satisfaction", color: "text-accent" },
+              { value: "5+", label: "Years Experience", color: "text-gold" },
+            ].map((stat) => (
+              <motion.div key={stat.label} variants={staggerItemVariants} className="text-center">
+                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                  {stat.value}
+                </div>
+                <div className="text-sm text-secondary">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -87,11 +98,19 @@ const Solutions = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+          >
             {filters.map((filter) => (
-              <button
+              <motion.button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                   activeFilter === filter
                     ? "bg-primary text-primary-foreground"
@@ -99,80 +118,138 @@ const Solutions = () => {
                 }`}
               >
                 {filter}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredSolutions.map((solution) => {
-              const Icon = iconMap[solution.icon as keyof typeof iconMap];
-              return (
-                <div
-                  key={solution.title}
-                  className="bg-card rounded-xl shadow-card border border-border hover:shadow-glow transition-all group overflow-hidden"
-                >
-                  {/* Image placeholder */}
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center">
-                    <Icon className="w-16 h-16 text-primary/60" />
-                    <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold">
-                      {solution.category}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold">{solution.title}</h3>
-                    <p className="text-secondary text-sm leading-relaxed">
-                      {solution.description}
-                    </p>
-
-                    {/* Tech tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {solution.featuresList.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    <a
-                      href={solution.link}
-                      className="inline-flex items-center text-primary hover:text-primary-light font-semibold text-sm group-hover:translate-x-1 transition-all"
+          <AnimatePresence>
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              key={activeFilter}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0 }}
+            >
+              {filteredSolutions.map((solution) => {
+                const Icon = iconMap[solution.icon as keyof typeof iconMap];
+                return (
+                  <motion.div
+                    key={solution.title}
+                    variants={staggerItemVariants}
+                    layout
+                    className="bg-card rounded-xl shadow-card border border-border hover-lift group overflow-hidden"
+                    whileHover={{ y: -8 }}
+                  >
+                    {/* Image placeholder */}
+                    <motion.div
+                      className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center"
+                      whileHover={{ backgroundColor: "rgba(220, 70%, 25%, 0.15)" }}
                     >
-                      View Details
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                      <motion.div whileHover={{ scale: 1.1 }}>
+                        <Icon className="w-16 h-16 text-primary/60" />
+                      </motion.div>
+                      <motion.div
+                        className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {solution.category}
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Content */}
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-xl font-bold">{solution.title}</h3>
+                      <p className="text-secondary text-sm leading-relaxed">
+                        {solution.description}
+                      </p>
+
+                      {/* Tech tags */}
+                      <motion.div className="flex flex-wrap gap-2">
+                        {solution.featuresList.map((feature, idx) => (
+                          <motion.span
+                            key={feature}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
+                          >
+                            {feature}
+                          </motion.span>
+                        ))}
+                      </motion.div>
+
+                      <motion.a
+                        href={solution.link}
+                        className="inline-flex items-center text-primary hover:text-primary-light font-semibold text-sm"
+                        whileHover={{ x: 4 }}
+                      >
+                        View Details
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </motion.a>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary-light">
+      <motion.section
+        className="py-20 bg-gradient-to-r from-primary to-primary-light"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             Ready to Start Your Next Project?
-          </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p
+            className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Let's collaborate to bring your vision to life. Contact us today to
             discuss your requirements and get a personalized quote.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all">
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 bg-white text-primary rounded-lg font-semibold hover:bg-gray-100 transition-all"
+            >
               Start a Project
-            </button>
-            <button className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-all">
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary transition-all"
+            >
               View Our Process
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
