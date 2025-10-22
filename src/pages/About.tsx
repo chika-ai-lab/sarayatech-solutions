@@ -62,7 +62,13 @@ const About = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
+            <motion.div
+              className="space-y-6"
+              variants={slideInLeftVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl md:text-5xl font-bold">Our Mission</h2>
               <div className="space-y-4 text-lg text-secondary leading-relaxed">
                 <p>
@@ -84,9 +90,15 @@ const About = () => {
                   sustainable competitive advantage.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-2 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {[
                 { icon: Users, value: "500+", label: "Clients" },
                 { icon: Globe, value: "40+", label: "Countries" },
@@ -95,19 +107,21 @@ const About = () => {
               ].map((stat) => {
                 const Icon = stat.icon;
                 return (
-                  <div
+                  <motion.div
                     key={stat.label}
-                    className="bg-card rounded-2xl p-6 shadow-card border border-border text-center"
+                    variants={staggerItemVariants}
+                    className="bg-card rounded-2xl p-6 shadow-card border border-border text-center hover-lift"
+                    whileHover={{ y: -8 }}
                   >
                     <Icon className="w-10 h-10 text-primary mx-auto mb-3" />
                     <div className="text-3xl font-bold text-foreground mb-1">
                       {stat.value}
                     </div>
                     <div className="text-sm text-secondary">{stat.label}</div>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
