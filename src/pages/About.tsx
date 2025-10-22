@@ -236,24 +236,49 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-primary text-primary-foreground">
+      <motion.section
+        className="py-24 gradient-primary text-primary-foreground"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             Join Our Journey
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/90">
+          </motion.h2>
+          <motion.p
+            className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground/90"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             We're always looking for talented individuals to join our team
-          </p>
-          <Link to="/careers">
-            <Button
-              size="lg"
-              className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent"
-            >
-              View Open Positions
-            </Button>
-          </Link>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/careers">
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent"
+              >
+                View Open Positions
+              </Button>
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
