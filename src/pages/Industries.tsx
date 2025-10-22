@@ -83,19 +83,27 @@ const Industries = () => {
             </div>
 
             {/* Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {industries.map((industry, index) => {
                 const Icon = industry.icon;
                 // Show last industry as custom solutions on wider screens
                 const isLastAndWide = index === industries.length - 1;
 
                 return isLastAndWide ? (
-                  <a
+                  <motion.a
                     key={industry.id}
                     href={`/industry/${industry.id}`}
                     className="lg:col-span-1 lg:row-span-2"
+                    variants={staggerItemVariants}
+                    whileHover={{ y: -8 }}
                   >
-                    <div className="h-full bg-foreground rounded-2xl p-8 text-primary-foreground flex flex-col justify-between hover:shadow-lg transition-all duration-300 group">
+                    <div className="h-full bg-foreground rounded-2xl p-8 text-primary-foreground flex flex-col justify-between hover:shadow-lg transition-all duration-300 group hover-lift">
                       <div>
                         <Icon className="w-10 h-10 mb-6 text-gold opacity-80" />
                         <h3 className="text-2xl font-bold mb-2">
@@ -125,14 +133,16 @@ const Industries = () => {
                         Contact Us <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
-                  </a>
+                  </motion.a>
                 ) : (
-                  <a
+                  <motion.a
                     key={industry.id}
                     href={`/industry/${industry.id}`}
                     className="group"
+                    variants={staggerItemVariants}
+                    whileHover={{ y: -8 }}
                   >
-                    <div className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                    <div className="bg-card rounded-2xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full flex flex-col hover-lift">
                       {/* Header with Icon */}
                       <div className="flex items-start justify-between mb-6">
                         <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
@@ -171,10 +181,10 @@ const Industries = () => {
                         Learn More <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>
-                  </a>
+                  </motion.a>
                 );
               })}
-            </div>
+            </motion.div>
           </div>
         </section>
 
