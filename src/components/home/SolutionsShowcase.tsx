@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cloud, Database, Cpu, LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { SOLUTIONS_DATA } from "@/constants/solutions";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
 import architectureIllustration from "@/assets/architecture-illustration.jpg";
+import { fadeInUpVariants, staggerItemVariants } from "@/constants/animations";
 
 const imageMap = {
   "architecture-illustration": architectureIllustration,
