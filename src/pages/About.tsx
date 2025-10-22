@@ -182,24 +182,44 @@ const About = () => {
       {/* Leadership Section */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-3xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Leadership Team
             </h2>
             <p className="text-xl text-secondary leading-relaxed">
               Industry veterans driving innovation and excellence
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {LEADERSHIP_TEAM.map((leader) => (
-              <div
+              <motion.div
                 key={leader.name}
-                className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover:shadow-elegant transition-all group"
+                variants={staggerItemVariants}
+                className="bg-card rounded-2xl overflow-hidden shadow-card border border-border hover-lift group"
+                whileHover={{ y: -8 }}
               >
-                <div className="h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-end justify-center">
-                  <div className="w-40 h-40 rounded-full bg-muted mb-4" />
-                </div>
+                <motion.div
+                  className="h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-end justify-center"
+                  whileHover={{ backgroundPosition: ["0% 50%", "100% 50%"] }}
+                >
+                  <motion.div
+                    className="w-40 h-40 rounded-full bg-muted mb-4"
+                    whileHover={{ scale: 1.05 }}
+                  />
+                </motion.div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
                   <div className="text-sm text-primary font-semibold mb-3">
@@ -209,9 +229,9 @@ const About = () => {
                     {leader.bio}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
