@@ -8,7 +8,13 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SOLUTIONS_DATA } from "@/constants/solutions";
+import {
+  containerVariants,
+  fadeInUpVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
 
 const iconMap = {
   Cloud,
