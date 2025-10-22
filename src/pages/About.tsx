@@ -10,8 +10,15 @@ import {
   Shield,
   TrendingUp,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import teamPhoto from "@/assets/team-photo.jpg";
 import { ABOUT_VALUES, LEADERSHIP_TEAM, ABOUT_STATS } from "@/constants";
+import {
+  containerVariants,
+  fadeInUpVariants,
+  slideInLeftVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
 
 const About = () => {
   return (
