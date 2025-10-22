@@ -1,5 +1,11 @@
 import { ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
 import { industries } from "@/constants/industries";
+import {
+  containerVariants,
+  fadeInUpVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
 
 const Industries = () => {
   return (
