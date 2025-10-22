@@ -55,7 +55,14 @@ const StatsSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 gradient-primary text-primary-foreground relative overflow-hidden">
+    <motion.section
+      ref={sectionRef}
+      className="py-24 gradient-primary text-primary-foreground relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -65,33 +72,51 @@ const StatsSection = () => {
       </div>
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Delivering Measurable Impact
           </h2>
           <p className="text-xl text-primary-foreground/90 leading-relaxed">
             Our commitment to excellence translates into tangible results for our clients
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => {
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {stats.map((stat) => {
             const Icon = stat.icon;
             return (
-              <div
+              <motion.div
                 key={stat.label}
                 className="text-center group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                variants={staggerItemVariants}
               >
-                <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 group-hover:scale-110 transition-smooth border border-white/20">
+                <motion.div className="mb-6 flex justify-center" whileHover={{ scale: 1.1 }}>
+                  <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-smooth border border-white/20">
                     <Icon className="w-10 h-10 text-gold" />
                   </div>
-                </div>
-                <div className={`text-5xl md:text-6xl font-extrabold mb-3 ${isVisible ? 'animate-count-up' : 'opacity-0'}`}>
-                  <span className="bg-gradient-to-r from-gold to-white bg-clip-text text-transparent">
+                </motion.div>
+                <div className="text-5xl md:text-6xl font-extrabold mb-3">
+                  <motion.span
+                    className="bg-gradient-to-r from-gold to-white bg-clip-text text-transparent"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                  >
                     {stat.value}
-                  </span>
+                  </motion.span>
                 </div>
                 <div className="text-xl font-semibold mb-2">
                   {stat.label}
@@ -99,12 +124,12 @@ const StatsSection = () => {
                 <p className="text-primary-foreground/80 text-sm">
                   {stat.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
