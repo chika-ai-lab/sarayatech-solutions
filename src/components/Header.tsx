@@ -74,44 +74,63 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-6 space-y-4 border-t border-border animate-fade-in">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block px-4 py-2 rounded-lg font-medium transition-smooth ${
-                  isActive(item.path)
-                    ? "bg-primary/10 text-primary"
-                    : "text-secondary hover:bg-muted"
-                }`}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              className="lg:hidden py-6 space-y-4 border-t border-border"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navigation.map((item, idx) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.05 }}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`block px-4 py-2 rounded-lg font-medium transition-smooth ${
+                      isActive(item.path)
+                        ? "bg-primary/10 text-primary"
+                        : "text-secondary hover:bg-muted"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                className="px-4 pt-4 space-y-3 border-t border-border"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
               >
-                {item.name}
-              </Link>
-            ))}
-            <div className="px-4 pt-4 space-y-3 border-t border-border">
-              <Link
-                to="/contact"
-                className="block"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Button variant="outline" className="w-full">
-                  Contact Us
-                </Button>
-              </Link>
-              <Link
-                to="/contact"
-                className="block"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <Button className="w-full bg-accent hover:bg-accent-light">
-                  Request Demo
-                </Button>
-              </Link>
-            </div>
-          </div>
-        )}
+                <Link
+                  to="/contact"
+                  className="block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Button variant="outline" className="w-full">
+                    Contact Us
+                  </Button>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Button className="w-full bg-accent hover:bg-accent-light">
+                    Request Demo
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );
