@@ -98,11 +98,19 @@ const Solutions = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+          >
             {filters.map((filter) => (
-              <button
+              <motion.button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
                   activeFilter === filter
                     ? "bg-primary text-primary-foreground"
@@ -110,57 +118,83 @@ const Solutions = () => {
                 }`}
               >
                 {filter}
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredSolutions.map((solution) => {
-              const Icon = iconMap[solution.icon as keyof typeof iconMap];
-              return (
-                <div
-                  key={solution.title}
-                  className="bg-card rounded-xl shadow-card border border-border hover:shadow-glow transition-all group overflow-hidden"
-                >
-                  {/* Image placeholder */}
-                  <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center">
-                    <Icon className="w-16 h-16 text-primary/60" />
-                    <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold">
-                      {solution.category}
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-bold">{solution.title}</h3>
-                    <p className="text-secondary text-sm leading-relaxed">
-                      {solution.description}
-                    </p>
-
-                    {/* Tech tags */}
-                    <div className="flex flex-wrap gap-2">
-                      {solution.featuresList.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    <a
-                      href={solution.link}
-                      className="inline-flex items-center text-primary hover:text-primary-light font-semibold text-sm group-hover:translate-x-1 transition-all"
+          <AnimatePresence>
+            <motion.div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              key={activeFilter}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit={{ opacity: 0 }}
+            >
+              {filteredSolutions.map((solution) => {
+                const Icon = iconMap[solution.icon as keyof typeof iconMap];
+                return (
+                  <motion.div
+                    key={solution.title}
+                    variants={staggerItemVariants}
+                    layout
+                    className="bg-card rounded-xl shadow-card border border-border hover-lift group overflow-hidden"
+                    whileHover={{ y: -8 }}
+                  >
+                    {/* Image placeholder */}
+                    <motion.div
+                      className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center"
+                      whileHover={{ backgroundColor: "rgba(220, 70%, 25%, 0.15)" }}
                     >
-                      View Details
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                      <motion.div whileHover={{ scale: 1.1 }}>
+                        <Icon className="w-16 h-16 text-primary/60" />
+                      </motion.div>
+                      <motion.div
+                        className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-semibold"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {solution.category}
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Content */}
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-xl font-bold">{solution.title}</h3>
+                      <p className="text-secondary text-sm leading-relaxed">
+                        {solution.description}
+                      </p>
+
+                      {/* Tech tags */}
+                      <motion.div className="flex flex-wrap gap-2">
+                        {solution.featuresList.map((feature, idx) => (
+                          <motion.span
+                            key={feature}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
+                          >
+                            {feature}
+                          </motion.span>
+                        ))}
+                      </motion.div>
+
+                      <motion.a
+                        href={solution.link}
+                        className="inline-flex items-center text-primary hover:text-primary-light font-semibold text-sm"
+                        whileHover={{ x: 4 }}
+                      >
+                        View Details
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </motion.a>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
