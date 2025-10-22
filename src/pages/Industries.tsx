@@ -12,11 +12,21 @@ const Industries = () => {
     <div className="min-h-screen bg-background">
       <main>
         {/* Hero Section */}
-        <section className="relative py-32 bg-muted">
+        <motion.section
+          className="relative py-32 bg-muted"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center space-y-8">
               {/* Heading */}
-              <div className="space-y-6">
+              <motion.div
+                className="space-y-6"
+                variants={fadeInUpVariants}
+                initial="hidden"
+                animate="visible"
+              >
                 <h1 className="text-5xl md:text-7xl font-black text-foreground leading-tight">
                   Industry-Leading Solutions for{" "}
                   <span className="text-primary">Every</span>
@@ -28,20 +38,35 @@ const Industries = () => {
                   designed for Financial Services, Manufacturing, Healthcare,
                   Retail, and Education industries.
                 </p>
-              </div>
+              </motion.div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                <button className="px-8 py-3 bg-primary hover:bg-primary-dark text-primary-foreground font-bold rounded-lg hover:shadow-lg transition-all duration-300">
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center pt-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.button
+                  variants={staggerItemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 bg-primary hover:bg-primary-dark text-primary-foreground font-bold rounded-lg hover:shadow-lg transition-all duration-300"
+                >
                   Explore Industries
-                </button>
-                <button className="px-8 py-3 border-2 border-border text-foreground font-bold rounded-lg hover:border-primary hover:text-primary transition-all duration-300 bg-background">
+                </motion.button>
+                <motion.button
+                  variants={staggerItemVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 border-2 border-border text-foreground font-bold rounded-lg hover:border-primary hover:text-primary transition-all duration-300 bg-background"
+                >
                   View Demo
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Industries Grid Section */}
         <section className="relative py-24 bg-background">
