@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { TrendingUp, Users, Globe, Award } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  containerVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
