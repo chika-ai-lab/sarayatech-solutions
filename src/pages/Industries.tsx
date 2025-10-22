@@ -189,32 +189,50 @@ const Industries = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="relative py-20 bg-foreground text-primary-foreground">
+        <motion.section
+          className="relative py-20 bg-foreground text-primary-foreground"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl font-black mb-4">
                 Trusted by Industry Leaders
               </h2>
               <p className="text-primary-foreground/80">
                 Our solutions power businesses across all sectors
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-4 gap-8">
+            <motion.div
+              className="grid md:grid-cols-4 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {[
                 { number: "500+", label: "Enterprise Clients" },
                 { number: "99.9%", label: "Uptime Guarantee" },
                 { number: "50M+", label: "Transactions Processed" },
                 { number: "24/7", label: "Support Available" },
               ].map((stat, idx) => (
-                <div key={idx} className="text-center">
+                <motion.div key={idx} variants={staggerItemVariants} className="text-center">
                   <div className="text-5xl font-black mb-2">{stat.number}</div>
                   <p className="text-primary-foreground/80">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* CTA Section */}
         <section className="relative py-32 bg-gradient-to-r from-primary via-primary/90 to-accent overflow-hidden">
