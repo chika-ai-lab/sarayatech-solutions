@@ -129,7 +129,13 @@ const About = () => {
       {/* Values Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-3xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our Core Values
             </h2>
@@ -137,27 +143,39 @@ const About = () => {
               These principles guide every decision we make and every solution
               we deliver
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {ABOUT_VALUES.map((value) => {
               const Icon = value.icon;
               return (
-                <div
+                <motion.div
                   key={value.title}
-                  className="bg-card rounded-2xl p-8 shadow-card border border-border hover:shadow-elegant transition-all group"
+                  variants={staggerItemVariants}
+                  className="bg-card rounded-2xl p-8 shadow-card border border-border hover-lift group"
+                  whileHover={{ y: -8 }}
                 >
-                  <div className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-smooth">
+                  <motion.div
+                    className="w-16 h-16 rounded-xl gradient-primary flex items-center justify-center mb-6"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <Icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                   <p className="text-secondary leading-relaxed">
                     {value.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
