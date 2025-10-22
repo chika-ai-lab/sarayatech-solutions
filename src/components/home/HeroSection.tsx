@@ -1,15 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
 import dashboardMockup from "@/assets/dashboard-mockup.jpg";
+import {
+  fadeInUpVariants,
+  containerVariants,
+  staggerItemVariants,
+} from "@/constants/animations";
+
+const STATS = [
+  { value: "500+", label: "Enterprise Clients" },
+  { value: "15+", label: "Years Experience" },
+  { value: "97%", label: "Satisfaction Rate" },
+];
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-primary opacity-95" />
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-primary via-primary-light to-primary opacity-95"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        />
         <img
           src={heroBg}
           alt="Technology background"
@@ -21,110 +38,168 @@ const HeroSection = () => {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
-          <div className="text-white space-y-8 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-              <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
+          <motion.div
+            className="text-white space-y-8"
+            variants={fadeInUpVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div
+              className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
+            >
+              <motion.span
+                className="w-2 h-2 bg-gold rounded-full"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
               <span className="text-sm font-medium">
                 Trusted by 500+ Enterprises
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
               Transform Your{" "}
               <span className="bg-gradient-to-r from-gold to-accent bg-clip-text text-transparent">
                 Business
               </span>{" "}
               with Enterprise Technology
-            </h1>
+            </motion.h1>
 
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl">
+            <motion.p
+              className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
               Unlock exponential growth with our cloud-native platforms,
               advanced analytics, and AI-powered solutions.{" "}
               <span className="font-semibold text-gold">
                 97% client satisfaction
               </span>{" "}
               across industries.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent text-lg px-8 h-14 group"
-                >
-                  Request a Demo
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" />
-                </Button>
-              </Link>
-              <Link to="/realisation">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg px-8 h-14 backdrop-blur-sm group"
-                >
-                  <Play
-                    className="mr-2 group-hover:scale-110 transition-smooth"
-                    size={20}
-                  />
-                  View Realisation
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button
-                  size="lg"
-                  variant="ghost"
-                  className="text-white hover:bg-white/10 text-lg px-8 h-14"
-                >
-                  Talk to Expert
-                </Button>
-              </Link>
-            </div>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 pt-4"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={staggerItemVariants}>
+                <Link to="/contact">
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      size="lg"
+                      className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent text-lg px-8 h-14 group"
+                    >
+                      Request a Demo
+                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" />
+                    </Button>
+                  </motion.div>
+                </Link>
+              </motion.div>
+              <motion.div variants={staggerItemVariants}>
+                <Link to="/realisation">
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg px-8 h-14 backdrop-blur-sm group"
+                    >
+                      <Play
+                        className="mr-2 group-hover:scale-110 transition-smooth"
+                        size={20}
+                      />
+                      View Realisation
+                    </Button>
+                  </motion.div>
+                </Link>
+              </motion.div>
+              <motion.div variants={staggerItemVariants}>
+                <Link to="/contact">
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      size="lg"
+                      variant="ghost"
+                      className="text-white hover:bg-white/10 text-lg px-8 h-14"
+                    >
+                      Talk to Expert
+                    </Button>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            </motion.div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
-              <div>
-                <div className="text-3xl font-bold text-gold mb-1">500+</div>
-                <div className="text-sm text-white/80">Enterprise Clients</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gold mb-1">15+</div>
-                <div className="text-sm text-white/80">Years Experience</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-gold mb-1">97%</div>
-                <div className="text-sm text-white/80">Satisfaction Rate</div>
-              </div>
-            </div>
-          </div>
+            <motion.div
+              className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {STATS.map((stat) => (
+                <motion.div key={stat.label} variants={staggerItemVariants}>
+                  <div className="text-3xl font-bold text-gold mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-white/80">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
 
           {/* Right Column - Dashboard Mockup */}
-          <div className="relative animate-slide-in-right hidden lg:block">
+          <motion.div
+            className="relative hidden lg:block"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
             <div className="relative">
               {/* Floating Cards */}
-              <div className="absolute -top-8 -left-8 bg-white rounded-xl p-4 shadow-elegant animate-bounce-slow z-10">
+              <motion.div
+                className="absolute -top-8 -left-8 bg-white rounded-xl p-4 shadow-elegant z-10"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
                 <div className="text-sm font-semibold text-foreground mb-1">
                   Revenue Growth
                 </div>
                 <div className="text-2xl font-bold text-accent">+247%</div>
-              </div>
+              </motion.div>
 
-              <div className="absolute -bottom-8 -right-8 bg-white rounded-xl p-4 shadow-elegant animate-bounce-slow animation-delay-300 z-10">
+              <motion.div
+                className="absolute -bottom-8 -right-8 bg-white rounded-xl p-4 shadow-elegant z-10"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+              >
                 <div className="text-sm font-semibold text-foreground mb-1">
                   Active Users
                 </div>
                 <div className="text-2xl font-bold text-primary">2.4M</div>
-              </div>
+              </motion.div>
 
               {/* Main Dashboard */}
-              <div className="relative rounded-2xl overflow-hidden shadow-glow border-4 border-white/20 hover-lift">
+              <motion.div
+                className="relative rounded-2xl overflow-hidden shadow-glow border-4 border-white/20 hover-lift"
+                whileHover={{ y: -8 }}
+              >
                 <img
                   src={dashboardMockup}
                   alt="SarayaTech Dashboard Interface"
                   className="w-full h-auto"
                 />
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
