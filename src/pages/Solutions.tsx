@@ -79,12 +79,26 @@ const Solutions = () => {
             viewport={{ once: true }}
           >
             {[
-              { value: "150+", label: "Projects Completed", color: "text-primary" },
-              { value: "98%", label: "Client Satisfaction", color: "text-accent" },
+              {
+                value: "85+",
+                label: "Projects Completed",
+                color: "text-primary",
+              },
+              {
+                value: "97%",
+                label: "Client Satisfaction",
+                color: "text-accent",
+              },
               { value: "5+", label: "Years Experience", color: "text-gold" },
             ].map((stat) => (
-              <motion.div key={stat.label} variants={staggerItemVariants} className="text-center">
-                <div className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+              <motion.div
+                key={stat.label}
+                variants={staggerItemVariants}
+                className="text-center"
+              >
+                <div
+                  className={`text-3xl md:text-4xl font-bold ${stat.color} mb-2`}
+                >
                   {stat.value}
                 </div>
                 <div className="text-sm text-secondary">{stat.label}</div>
@@ -144,7 +158,9 @@ const Solutions = () => {
                     {/* Image placeholder */}
                     <motion.div
                       className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 relative flex items-center justify-center"
-                      whileHover={{ backgroundColor: "rgba(220, 70%, 25%, 0.15)" }}
+                      whileHover={{
+                        backgroundColor: "rgba(220, 70%, 25%, 0.15)",
+                      }}
                     >
                       <motion.div whileHover={{ scale: 1.1 }}>
                         <Icon className="w-16 h-16 text-primary/60" />

@@ -14,6 +14,7 @@ import Insights from "./pages/Insights";
 import SolutionDetails from "./pages/SolutionDetails";
 import Industries from "./pages/Industries";
 import IndustryDetails from "./pages/IndustryDetails";
+import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
@@ -97,6 +98,14 @@ const App = () => (
             element={
               <Layout>
                 <Insights />
+              </Layout>
+            }
+          />
+          <Route
+            path="/careers"
+            element={
+              <Layout>
+                <Careers />
               </Layout>
             }
           />

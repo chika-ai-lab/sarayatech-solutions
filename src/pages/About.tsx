@@ -51,7 +51,7 @@ const About = () => {
               <span className="text-gold">Enterprise Technology</span>
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-              Since 2009, we've been empowering organizations to achieve
+              Since 2020, we've been empowering organizations to achieve
               extraordinary outcomes through innovative technology solutions.
             </p>
           </motion.div>
@@ -85,8 +85,8 @@ const About = () => {
                   age.
                 </p>
                 <p>
-                  Based in Columbus, Ohio, we serve 500+ enterprise clients
-                  across 40+ countries, delivering measurable impact and
+                  Based in Columbus, Ohio, we serve 50+ enterprise clients
+                  across 5+ countries, delivering measurable impact and
                   sustainable competitive advantage.
                 </p>
               </div>
@@ -100,9 +100,9 @@ const About = () => {
               viewport={{ once: true }}
             >
               {[
-                { icon: Users, value: "500+", label: "Clients" },
-                { icon: Globe, value: "40+", label: "Countries" },
-                { icon: Award, value: "15+", label: "Years" },
+                { icon: Users, value: "50+", label: "Clients" },
+                { icon: Globe, value: "5+", label: "Countries" },
+                { icon: Award, value: "5+", label: "Years" },
                 { icon: Zap, value: "97%", label: "Satisfaction" },
               ].map((stat) => {
                 const Icon = stat.icon;

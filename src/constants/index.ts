@@ -42,7 +42,7 @@ export const LEADERSHIP_TEAM = [
   {
     name: "James Anderson",
     role: "Chief Executive Officer",
-    bio: "15+ years leading technology transformations at Fortune 500 companies.",
+    bio: "5+ years leading technology transformations at Fortune 500 companies.",
   },
   {
     name: "Maria Rodriguez",
@@ -63,8 +63,8 @@ export const LEADERSHIP_TEAM = [
 
 export const ABOUT_STATS = [
   { icon: "Users", value: "500+", label: "Clients" },
-  { icon: "Globe", value: "40+", label: "Countries" },
-  { icon: "Award", value: "15+", label: "Years" },
+  { icon: "Globe", value: "5+", label: "Countries" },
+  { icon: "Award", value: "5+", label: "Years" },
   { icon: "Zap", value: "97%", label: "Satisfaction" },
 ];
 

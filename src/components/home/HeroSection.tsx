@@ -11,8 +11,8 @@ import {
 } from "@/constants/animations";
 
 const STATS = [
-  { value: "500+", label: "Enterprise Clients" },
-  { value: "15+", label: "Years Experience" },
+  { value: "50+", label: "Enterprise Clients" },
+  { value: "5+", label: "Years Experience" },
   { value: "97%", label: "Satisfaction Rate" },
 ];
 
@@ -56,7 +56,7 @@ const HeroSection = () => {
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
               <span className="text-sm font-medium">
-                Trusted by 500+ Enterprises
+                Trusted by 50+ Enterprises
               </span>
             </motion.div>
 
@@ -95,7 +95,10 @@ const HeroSection = () => {
             >
               <motion.div variants={staggerItemVariants}>
                 <Link to="/contact">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Button
                       size="lg"
                       className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent text-lg px-8 h-14 group"
@@ -108,7 +111,10 @@ const HeroSection = () => {
               </motion.div>
               <motion.div variants={staggerItemVariants}>
                 <Link to="/realisation">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Button
                       size="lg"
                       variant="outline"
@@ -125,7 +131,10 @@ const HeroSection = () => {
               </motion.div>
               <motion.div variants={staggerItemVariants}>
                 <Link to="/contact">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Button
                       size="lg"
                       variant="ghost"
@@ -173,7 +182,7 @@ const HeroSection = () => {
                 <div className="text-sm font-semibold text-foreground mb-1">
                   Revenue Growth
                 </div>
-                <div className="text-2xl font-bold text-accent">+247%</div>
+                <div className="text-2xl font-bold text-accent">+68%</div>
               </motion.div>
 
               <motion.div
@@ -184,7 +193,7 @@ const HeroSection = () => {
                 <div className="text-sm font-semibold text-foreground mb-1">
                   Active Users
                 </div>
-                <div className="text-2xl font-bold text-primary">2.4M</div>
+                <div className="text-2xl font-bold text-primary">150K</div>
               </motion.div>
 
               {/* Main Dashboard */}

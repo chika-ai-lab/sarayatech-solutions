@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { TrendingUp, Users, Globe, Award } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  containerVariants,
-  staggerItemVariants,
-} from "@/constants/animations";
+import { containerVariants, staggerItemVariants } from "@/constants/animations";
 
 const StatsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,28 +27,28 @@ const StatsSection = () => {
   const stats = [
     {
       icon: Users,
-      value: "500+",
+      value: "50+",
       label: "Enterprise Clients",
-      description: "Trusted by Fortune 500 companies"
+      description: "Trusted by Fortune 500 companies",
     },
     {
       icon: TrendingUp,
-      value: "247%",
+      value: "68%",
       label: "Average ROI",
-      description: "Measured client growth in first year"
+      description: "Measured client growth in first year",
     },
     {
       icon: Globe,
-      value: "40+",
+      value: "5+",
       label: "Countries",
-      description: "Global presence and support"
+      description: "Global presence and support",
     },
     {
       icon: Award,
       value: "97%",
       label: "Client Satisfaction",
-      description: "Industry-leading retention rate"
-    }
+      description: "Industry-leading retention rate",
+    },
   ];
 
   return (
@@ -65,10 +62,13 @@ const StatsSection = () => {
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,8 @@ const StatsSection = () => {
             Delivering Measurable Impact
           </h2>
           <p className="text-xl text-primary-foreground/90 leading-relaxed">
-            Our commitment to excellence translates into tangible results for our clients
+            Our commitment to excellence translates into tangible results for
+            our clients
           </p>
         </motion.div>
 
@@ -102,7 +103,10 @@ const StatsSection = () => {
                 className="text-center group"
                 variants={staggerItemVariants}
               >
-                <motion.div className="mb-6 flex justify-center" whileHover={{ scale: 1.1 }}>
+                <motion.div
+                  className="mb-6 flex justify-center"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <div className="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/20 transition-smooth border border-white/20">
                     <Icon className="w-10 h-10 text-gold" />
                   </div>
@@ -118,9 +122,7 @@ const StatsSection = () => {
                     {stat.value}
                   </motion.span>
                 </div>
-                <div className="text-xl font-semibold mb-2">
-                  {stat.label}
-                </div>
+                <div className="text-xl font-semibold mb-2">{stat.label}</div>
                 <p className="text-primary-foreground/80 text-sm">
                   {stat.description}
                 </p>
