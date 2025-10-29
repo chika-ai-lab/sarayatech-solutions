@@ -11,8 +11,11 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import teamPhoto from "@/assets/team-photo.jpg";
-import { ABOUT_VALUES, LEADERSHIP_TEAM, ABOUT_STATS } from "@/constants";
+import aboutValuesData from "../../data/about-values.json";
+import leadershipTeamData from "../../data/leadership-team.json";
+import aboutStatsData from "../../data/about-stats.json";
 import {
   containerVariants,
   fadeInUpVariants,
@@ -20,7 +23,23 @@ import {
   staggerItemVariants,
 } from "@/constants/animations";
 
+const iconMap = {
+  Award,
+  Globe,
+  Users,
+  Target,
+  Heart,
+  Zap,
+  Shield,
+  TrendingUp,
+};
+
 const About = () => {
+  const [aboutValues, setAboutValues] = useState(aboutValuesData);
+  const [leadershipTeam, setLeadershipTeam] = useState(leadershipTeamData);
+  const [aboutStats, setAboutStats] = useState(aboutStatsData);
+  const [loading, setLoading] = useState(false);
+
   return (
     <>
       {/* Hero Section */}
@@ -152,8 +171,8 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {ABOUT_VALUES.map((value) => {
-              const Icon = value.icon;
+            {aboutValues.map((value) => {
+              const Icon = iconMap[value.icon as keyof typeof iconMap];
               return (
                 <motion.div
                   key={value.title}
@@ -204,7 +223,7 @@ const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {LEADERSHIP_TEAM.map((leader) => (
+            {leadershipTeam.map((leader) => (
               <motion.div
                 key={leader.name}
                 variants={staggerItemVariants}

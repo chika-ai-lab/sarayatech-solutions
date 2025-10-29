@@ -709,7 +709,7 @@ const SolutionDetails = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Employees</span>
-                    <span className="font-medium">500+</span>
+                    <span className="font-medium">50+</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Headquarters</span>

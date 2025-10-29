@@ -220,12 +220,16 @@ const Industries = () => {
               viewport={{ once: true }}
             >
               {[
-                { number: "500+", label: "Enterprise Clients" },
+                { number: "50+", label: "Enterprise Clients" },
                 { number: "99.9%", label: "Uptime Guarantee" },
-                { number: "50M+", label: "Transactions Processed" },
+                { number: "1M+", label: "Transactions Processed" },
                 { number: "24/7", label: "Support Available" },
               ].map((stat, idx) => (
-                <motion.div key={idx} variants={staggerItemVariants} className="text-center">
+                <motion.div
+                  key={idx}
+                  variants={staggerItemVariants}
+                  className="text-center"
+                >
                   <div className="text-5xl font-black mb-2">{stat.number}</div>
                   <p className="text-primary-foreground/80">{stat.label}</p>
                 </motion.div>

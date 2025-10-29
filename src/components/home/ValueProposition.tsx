@@ -10,22 +10,26 @@ const VALUES = [
   {
     icon: Cloud,
     title: "Cloud-Native Architecture",
-    description: "Scalable, resilient infrastructure that grows with your business. Deploy globally in minutes with 99.99% uptime SLA.",
+    description:
+      "Scalable, resilient infrastructure that grows with your business. Deploy globally in minutes with 99.99% uptime SLA.",
   },
   {
     icon: BarChart3,
     title: "Advanced Analytics",
-    description: "Turn data into actionable insights. Real-time dashboards, predictive analytics, and AI-powered recommendations.",
+    description:
+      "Turn data into actionable insights. Real-time dashboards, predictive analytics, and AI-powered recommendations.",
   },
   {
     icon: Lock,
     title: "Enterprise Security",
-    description: "Bank-grade encryption, SOC 2 Type II certified, and compliant with global data protection standards.",
+    description:
+      "Bank-grade encryption, SOC 2 Type II certified, and compliant with global data protection standards.",
   },
   {
     icon: Zap,
     title: "Rapid Integration",
-    description: "Connect with existing systems effortlessly. Pre-built connectors for 500+ enterprise applications and APIs.",
+    description:
+      "Connect with existing systems effortlessly. Pre-built connectors for 50+ enterprise applications and APIs.",
   },
 ];
 
@@ -44,7 +48,8 @@ const ValueProposition = () => {
             Why Leading Enterprises Choose SarayaTech
           </h2>
           <p className="text-xl text-secondary leading-relaxed">
-            Our enterprise-grade platform combines cutting-edge technology with proven methodologies to deliver measurable business outcomes.
+            Our enterprise-grade platform combines cutting-edge technology with
+            proven methodologies to deliver measurable business outcomes.
           </p>
         </motion.div>
 
@@ -62,7 +67,10 @@ const ValueProposition = () => {
                 key={value.title}
                 variants={staggerItemVariants}
                 className="group relative bg-card rounded-2xl p-8 shadow-card border border-border hover-lift"
-                whileHover={{ y: -8, boxShadow: "0 10px 40px -10px rgba(220, 70%, 25%, 0.25)" }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 10px 40px -10px rgba(220, 70%, 25%, 0.25)",
+                }}
               >
                 {/* Icon Container */}
                 <motion.div

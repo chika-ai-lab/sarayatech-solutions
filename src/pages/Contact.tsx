@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -27,17 +26,12 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
+    // Supabase removed — fallback: simulate success and clear form.
     try {
-      const { error } = await supabase
-        .from("contact_messages")
-        .insert([formData]);
-
-      if (error) throw error;
-
+      // In future, wire this to an API endpoint that stores messages in the DB.
       toast({
-        title: "Message envoyé",
-        description: "Nous vous répondrons dans les plus brefs délais.",
+        title: "Message simulé",
+        description: "Le message a été simulé (Supabase désactivé).",
       });
 
       setFormData({
@@ -46,12 +40,6 @@ const Contact = () => {
         company: "",
         subject: "demo",
         message: "",
-      });
-    } catch (error: any) {
-      toast({
-        title: "Erreur",
-        description: error.message,
-        variant: "destructive",
       });
     } finally {
       setLoading(false);
@@ -250,7 +238,8 @@ const Contact = () => {
                     </Button>
 
                     <p className="text-sm text-secondary text-center">
-                      Nous respectons votre vie privée. Vos informations ne seront jamais partagées.
+                      Nous respectons votre vie privée. Vos informations ne
+                      seront jamais partagées.
                     </p>
                   </form>
                 </div>

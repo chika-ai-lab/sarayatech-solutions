@@ -9,52 +9,17 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import careersData from "../../data/careers.json";
 import {
   containerVariants,
   fadeInUpVariants,
-  slideInLeftVariants,
   staggerItemVariants,
 } from "@/constants/animations";
 
 const Careers = () => {
-  const openPositions = [
-    {
-      title: "Senior Software Engineer",
-      department: "Engineering",
-      location: "Columbus, OH",
-      type: "Full-time",
-      salary: "$90k - $130k",
-      description:
-        "Join our engineering team to build scalable enterprise solutions using modern technologies.",
-    },
-    {
-      title: "Product Manager",
-      department: "Product",
-      location: "Columbus, OH",
-      type: "Full-time",
-      salary: "$85k - $115k",
-      description:
-        "Lead product strategy and development for our enterprise clients.",
-    },
-    {
-      title: "DevOps Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$95k - $125k",
-      description:
-        "Design and maintain our cloud infrastructure and deployment pipelines.",
-    },
-    {
-      title: "UX/UI Designer",
-      department: "Design",
-      location: "Columbus, OH",
-      type: "Full-time",
-      salary: "$70k - $95k",
-      description:
-        "Create intuitive and beautiful user experiences for our enterprise applications.",
-    },
-  ];
+  const [openPositions, setOpenPositions] = useState(careersData);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>

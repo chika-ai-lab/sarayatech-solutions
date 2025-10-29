@@ -9,7 +9,7 @@ import {
   Zap,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SOLUTIONS_DATA } from "@/constants/solutions";
+import solutionsData from "../../data/solutions.json";
 import {
   containerVariants,
   fadeInUpVariants,
@@ -27,15 +27,8 @@ const iconMap = {
 
 const Solutions = () => {
   const [activeFilter, setActiveFilter] = useState("All Solutions");
-
-  const solutions = [
-    SOLUTIONS_DATA["cloud-platform"],
-    SOLUTIONS_DATA["data-analytics"],
-    SOLUTIONS_DATA["enterprise-software"],
-    SOLUTIONS_DATA["infrastructure"],
-    SOLUTIONS_DATA["security"],
-    SOLUTIONS_DATA["performance"],
-  ];
+  const [solutions, setSolutions] = useState(solutionsData);
+  const [loading, setLoading] = useState(false);
 
   const filters = [
     "All Solutions",
@@ -184,17 +177,20 @@ const Solutions = () => {
 
                       {/* Tech tags */}
                       <motion.div className="flex flex-wrap gap-2">
-                        {solution.featuresList.map((feature, idx) => (
-                          <motion.span
-                            key={feature}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: idx * 0.05 }}
-                            className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
-                          >
-                            {feature}
-                          </motion.span>
-                        ))}
+                        {solution.featuresList &&
+                        Array.isArray(solution.featuresList)
+                          ? solution.featuresList.map((feature, idx) => (
+                              <motion.span
+                                key={feature}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: idx * 0.05 }}
+                                className="text-xs bg-muted text-foreground px-3 py-1 rounded-full"
+                              >
+                                {feature}
+                              </motion.span>
+                            ))
+                          : null}
                       </motion.div>
 
                       <motion.a

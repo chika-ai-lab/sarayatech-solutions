@@ -169,7 +169,7 @@ export const SOLUTIONS_DATA = {
         description: "Reduced manual analysis",
       },
       {
-        metric: "500+",
+        metric: "50+",
         label: "Data Sources",
         description: "Comprehensive integration",
       },
@@ -194,7 +194,7 @@ export const SOLUTIONS_DATA = {
     icon: "Cpu",
     title: "Enterprise Software Platform",
     subtitle:
-      "Mission-critical applications with API-first design and 500+ integrations",
+      "Mission-critical applications with API-first design and 50+ integrations",
     badge: "Enterprise Software",
     badgeIcon: "Cpu",
     category: "Enterprise Software",
@@ -217,7 +217,7 @@ export const SOLUTIONS_DATA = {
       },
       {
         icon: "Link2",
-        title: "500+ Integrations",
+        title: "50+ Integrations",
         description: "Connect with all your essential business tools",
       },
       {
@@ -253,7 +253,7 @@ export const SOLUTIONS_DATA = {
         description: "Reliable 24/7 operation",
       },
       {
-        metric: "500+",
+        metric: "50+",
         label: "Integrations",
         description: "Extensive ecosystem",
       },
@@ -271,10 +271,10 @@ export const SOLUTIONS_DATA = {
     benefitsList: [
       "Modular architecture",
       "API-first design",
-      "500+ pre-built integrations",
+      "50+ pre-built integrations",
       "White-label capabilities",
     ],
-    featuresList: ["API-first", "500+ integrations", "White-label"],
+    featuresList: ["API-first", "50+ integrations", "White-label"],
     image: "dashboard-mockup",
     link: "/solutions/enterprise-software",
     reverse: false,

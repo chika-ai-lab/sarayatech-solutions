@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Lock, Mail, User } from "lucide-react";
 
@@ -17,61 +22,15 @@ const Auth = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  useEffect(() => {
-    const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (session) {
-        navigate("/dashboard");
-      }
-    };
-    checkSession();
-  }, [navigate]);
-
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
+    // Auth is disabled because supabase was removed. Show toast and noop.
     try {
-      if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
-
-        if (error) throw error;
-
-        toast({
-          title: "Connexion réussie",
-          description: "Bienvenue !",
-        });
-
-        navigate("/dashboard");
-      } else {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            data: {
-              full_name: fullName,
-            },
-            emailRedirectTo: `${window.location.origin}/dashboard`,
-          },
-        });
-
-        if (error) throw error;
-
-        toast({
-          title: "Compte créé",
-          description: "Vous pouvez maintenant vous connecter.",
-        });
-
-        setIsLogin(true);
-      }
-    } catch (error: any) {
       toast({
-        title: "Erreur",
-        description: error.message,
-        variant: "destructive",
+        title: "Fonction désactivée",
+        description:
+          "L'authentification est désactivée dans cette version. Contactez l'administrateur.",
       });
     } finally {
       setLoading(false);
