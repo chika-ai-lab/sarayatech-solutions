@@ -8,39 +8,69 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2, XCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
-    subject: "demo",
+    service: "General Inquiry", // Set default value to avoid uncontrolled warning
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<'success' | 'error'>('success');
+  const [modalMessage, setModalMessage] = useState('');
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Supabase removed — fallback: simulate success and clear form.
+
     try {
-      // In future, wire this to an API endpoint that stores messages in the DB.
-      toast({
-        title: "Message simulé",
-        description: "Le message a été simulé (Supabase désactivé).",
+      // Use API URL from environment variable (production) or proxy (development)
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        subject: "demo",
-        message: "",
-      });
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setModalType('success');
+        setModalMessage("Thank you for contacting us! We've received your message and will get back to you within 24-48 hours.");
+        setModalOpen(true);
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          service: "General Inquiry",
+          message: "",
+        });
+      } else {
+        throw new Error(data.message || 'Failed to send message');
+      }
+    } catch (error) {
+      setModalType('error');
+      setModalMessage(error instanceof Error ? error.message : "An error occurred. Please try again later or contact us directly at info@sarayatech.com");
+      setModalOpen(true);
     } finally {
       setLoading(false);
     }
@@ -144,7 +174,7 @@ const Contact = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium mb-2">
-                          Nom *
+                          Full Name *
                         </label>
                         <Input
                           placeholder="John Doe"
@@ -171,44 +201,70 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-sm font-medium mb-2">
-                        Entreprise
-                      </label>
-                      <Input
-                        placeholder="Votre entreprise"
-                        value={formData.company}
-                        onChange={(e) =>
-                          setFormData({ ...formData, company: e.target.value })
-                        }
-                      />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Phone Number
+                        </label>
+                        <Input
+                          type="tel"
+                          placeholder="+1 (555) 123-4567"
+                          value={formData.phone}
+                          onChange={(e) =>
+                            setFormData({ ...formData, phone: e.target.value })
+                          }
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Company
+                        </label>
+                        <Input
+                          placeholder="Your company name"
+                          value={formData.company}
+                          onChange={(e) =>
+                            setFormData({ ...formData, company: e.target.value })
+                          }
+                        />
+                      </div>
                     </div>
 
                     <div>
                       <label className="block text-sm font-medium mb-2">
-                        Sujet *
+                        Service Interest *
                       </label>
                       <Select
                         required
-                        value={formData.subject}
+                        value={formData.service}
                         onValueChange={(value) =>
-                          setFormData({ ...formData, subject: value })
+                          setFormData({ ...formData, service: value })
                         }
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Sélectionnez un sujet" />
+                          <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="demo">Demande de démo</SelectItem>
-                          <SelectItem value="sales">Vente</SelectItem>
-                          <SelectItem value="support">
-                            Support technique
+                          <SelectItem value="Web & Mobile Development">
+                            Web & Mobile Development
                           </SelectItem>
-                          <SelectItem value="partnership">
-                            Partenariat
+                          <SelectItem value="Data & Business Intelligence">
+                            Data & Business Intelligence
                           </SelectItem>
-                          <SelectItem value="press">Presse</SelectItem>
-                          <SelectItem value="other">Autre</SelectItem>
+                          <SelectItem value="Custom Business Software">
+                            Custom Business Software
+                          </SelectItem>
+                          <SelectItem value="Cloud & Infrastructure">
+                            Cloud & Infrastructure
+                          </SelectItem>
+                          <SelectItem value="Digital Strategy & Consulting">
+                            Digital Strategy & Consulting
+                          </SelectItem>
+                          <SelectItem value="Security & Compliance">
+                            Security & Compliance
+                          </SelectItem>
+                          <SelectItem value="General Inquiry">
+                            General Inquiry
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -218,7 +274,7 @@ const Contact = () => {
                         Message *
                       </label>
                       <Textarea
-                        placeholder="Parlez-nous de vos besoins..."
+                        placeholder="Tell us about your project and how we can help..."
                         rows={6}
                         required
                         value={formData.message}
@@ -234,12 +290,11 @@ const Contact = () => {
                       className="w-full bg-accent hover:bg-accent-light shadow-card"
                       disabled={loading}
                     >
-                      {loading ? "Envoi..." : "Envoyer le message"}
+                      {loading ? "Sending..." : "Send Message"}
                     </Button>
 
                     <p className="text-sm text-secondary text-center">
-                      Nous respectons votre vie privée. Vos informations ne
-                      seront jamais partagées.
+                      We respect your privacy. Your information will never be shared.
                     </p>
                   </form>
                 </div>
@@ -251,7 +306,7 @@ const Contact = () => {
         {/* Map Section */}
         <section className="h-96 bg-muted">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0877519854157!2d-82.88723862460068!3d39.91705238590096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387d37fcc2e35d%3A0x6c3ae3509bc1bb63!2s2765%20S%20Hamilton%20Rd%2C%20Columbus%2C%20OH%2043232%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2ssn!4v1760957415959!5m2!1sfr!2ssn"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0877519854157!2d-82.88723862460068!3d39.91705238590096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88387d37fcc2e35d%3A0x6c3ae3509bc1bb63!2s2765%20S%20Hamilton%20Rd%2C%20Columbus%2C%20OH%2043232%2C%20%C3%89tats-Unis!5e0!3m2!1sen!2sus!4v1760957415959!5m2!1sen!2sus"
             style={{
               width: "100%",
               height: "384px",
@@ -259,9 +314,44 @@ const Contact = () => {
             }}
             loading="lazy"
             allowFullScreen
+            title="SarayaTech Solutions Office Location"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </section>
       </main>
+
+      {/* Success/Error Modal */}
+      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="mx-auto mb-4">
+              {modalType === 'success' ? (
+                <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-600" />
+                </div>
+              ) : (
+                <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center">
+                  <XCircle className="w-10 h-10 text-red-600" />
+                </div>
+              )}
+            </div>
+            <DialogTitle className="text-center text-2xl">
+              {modalType === 'success' ? 'Message Sent Successfully!' : 'Oops! Something Went Wrong'}
+            </DialogTitle>
+            <DialogDescription className="text-center text-base pt-2">
+              {modalMessage}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center mt-4">
+            <Button
+              onClick={() => setModalOpen(false)}
+              className="w-full sm:w-auto bg-accent hover:bg-accent-light"
+            >
+              {modalType === 'success' ? 'Great, Thanks!' : 'Close'}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

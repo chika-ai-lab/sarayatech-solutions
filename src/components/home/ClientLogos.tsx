@@ -1,4 +1,11 @@
-import { Building2, Factory, Hospital, Landmark, ShoppingCart, Plane } from "lucide-react";
+import {
+  Building2,
+  Factory,
+  Hospital,
+  Landmark,
+  ShoppingCart,
+  Plane,
+} from "lucide-react";
 
 const ClientLogos = () => {
   const clients = [
@@ -11,12 +18,12 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-semibold text-secondary uppercase tracking-wider mb-12">
           Trusted by Industry Leaders Worldwide
         </p>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {clients.map((client) => {
             const Icon = client.icon;

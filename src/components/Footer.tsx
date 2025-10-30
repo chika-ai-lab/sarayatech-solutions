@@ -17,8 +17,8 @@ const Footer = () => {
               <img src="/logo.png" alt="Company Logo" className="h-16 w-auto" />
             </Link>
             <p className="text-sm text-primary-foreground/80 mb-6">
-              Empowering enterprises with innovative technology solutions for
-              digital transformation.
+              Your trusted partner for digital transformation.
+              Custom solutions and expert support.
             </p>
             <div className="flex space-x-4">
               <a
@@ -48,34 +48,34 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2 - Solutions */}
+          {/* Column 2 - Services */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider mb-6">
-              Solutions
+              Services
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="/solutions/cloud-platform"
+                  to="/solutions/web-mobile-development"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  Cloud Platform
+                  Web & Mobile
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/solutions/data-analytics"
+                  to="/solutions/data-bi-solutions"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  Data Analytics
+                  Data & BI
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/solutions/enterprise-software"
+                  to="/solutions/custom-business-software"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  Enterprise Software
+                  Business Software
                 </Link>
               </li>
               <li>
@@ -83,7 +83,7 @@ const Footer = () => {
                   to="/solutions"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  View All Solutions
+                  All Services
                 </Link>
               </li>
             </ul>
@@ -149,7 +149,7 @@ const Footer = () => {
                   to="/realisation"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-smooth"
                 >
-                  Realisation
+                  Case Studies
                 </Link>
               </li>
               <li>
@@ -177,7 +177,7 @@ const Footer = () => {
               Stay Updated
             </h3>
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Get the latest insights and updates delivered to your inbox.
+              Get the latest news and insights delivered to your inbox.
             </p>
             <div className="space-y-3">
               <Input
@@ -196,7 +196,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-primary-foreground/60">
-              © 2024 SarayaTech. All rights reserved. | Columbus, Ohio
+              © 2024 SarayaTech Solutions. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link

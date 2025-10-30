@@ -23,7 +23,9 @@ const STATS = [
 ];
 
 const Realisation = () => {
-  const [realisations, setRealisations] = useState(realisationsData);
+  const [realisations, setRealisations] = useState(
+    realisationsData.filter((r) => r.isActive)
+  );
   const [loading, setLoading] = useState(false);
   return (
     <div className="min-h-screen bg-background">

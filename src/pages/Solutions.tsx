@@ -7,6 +7,8 @@ import {
   Server,
   Shield,
   Zap,
+  Globe,
+  Lightbulb,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import solutionsData from "../../data/solutions.json";
@@ -23,22 +25,25 @@ const iconMap = {
   Server,
   Shield,
   Zap,
+  Globe,
+  Lightbulb,
 };
 
 const Solutions = () => {
-  const [activeFilter, setActiveFilter] = useState("All Solutions");
+  const [activeFilter, setActiveFilter] = useState("All Services");
   const [solutions, setSolutions] = useState(solutionsData);
   const [loading, setLoading] = useState(false);
 
   const filters = [
-    "All Solutions",
-    "Cloud Platform",
-    "Data Analytics",
-    "Enterprise Software",
+    "All Services",
+    "Development",
+    "Data & Analytics",
+    "Infrastructure",
+    "Consulting",
   ];
 
   const filteredSolutions =
-    activeFilter === "All Solutions"
+    activeFilter === "All Services"
       ? solutions
       : solutions.filter((s) => s.category === activeFilter);
 
@@ -54,12 +59,12 @@ const Solutions = () => {
             animate="visible"
           >
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              Our <span className="text-primary">Solutions</span>
+              Our <span className="text-primary">Services</span>
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              Discover our portfolio of innovative solutions and successful
-              implementations. Each project represents our commitment to
-              excellence and creative problem-solving.
+              Discover our range of digital services and expertise.
+              Each service reflects our commitment to excellence and
+              innovation.
             </p>
           </motion.div>
 
@@ -74,7 +79,7 @@ const Solutions = () => {
             {[
               {
                 value: "85+",
-                label: "Projects Completed",
+                label: "Projects Delivered",
                 color: "text-primary",
               },
               {
@@ -235,8 +240,8 @@ const Solutions = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Let's collaborate to bring your vision to life. Contact us today to
-            discuss your requirements and get a personalized quote.
+            Let's collaborate to bring your vision to life. Contact us today
+            to discuss your needs and get a personalized quote.
           </motion.p>
           <motion.div
             className="flex flex-wrap justify-center gap-4"

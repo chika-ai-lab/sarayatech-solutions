@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cloud, Database, Cpu, LucideIcon } from "lucide-react";
+import { ArrowRight, Cloud, Database, Cpu, Globe, Server, Shield, Zap, Lightbulb, LucideIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SOLUTIONS_DATA } from "@/constants/solutions";
@@ -16,13 +16,18 @@ const iconMap = {
   Cloud,
   Database,
   Cpu,
+  Globe,
+  Server,
+  Shield,
+  Zap,
+  Lightbulb,
 };
 
 const SolutionsShowcase = () => {
   const solutions = [
-    SOLUTIONS_DATA["cloud-platform"],
-    SOLUTIONS_DATA["data-analytics"],
-    SOLUTIONS_DATA["enterprise-software"],
+    SOLUTIONS_DATA["web-mobile-development"],
+    SOLUTIONS_DATA["data-bi-solutions"],
+    SOLUTIONS_DATA["custom-business-software"],
   ];
 
   return (
@@ -36,11 +41,11 @@ const SolutionsShowcase = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Complete Technology Solutions
+            Our Digital Services
           </h2>
           <p className="text-xl text-secondary leading-relaxed">
-            Purpose-built platforms designed to accelerate digital
-            transformation and drive business growth.
+            Custom solutions designed to accelerate your digital
+            transformation and drive your growth.
           </p>
         </motion.div>
 
@@ -73,7 +78,7 @@ const SolutionsShowcase = () => {
                       <Icon className="w-4 h-4 text-primary-foreground" />
                     </div>
                     <span className="text-sm font-semibold text-primary">
-                      Solution {index + 1}
+                      Service #{index + 1}
                     </span>
                   </motion.div>
 

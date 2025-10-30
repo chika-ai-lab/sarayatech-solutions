@@ -1,4 +1,4 @@
-import { Cloud, BarChart3, Lock, Zap } from "lucide-react";
+import { Users, Target, Code, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   containerVariants,
@@ -8,28 +8,28 @@ import {
 
 const VALUES = [
   {
-    icon: Cloud,
-    title: "Cloud-Native Architecture",
+    icon: Users,
+    title: "Expert Support",
     description:
-      "Scalable, resilient infrastructure that grows with your business. Deploy globally in minutes with 99.99% uptime SLA.",
+      "A team of technical experts by your side, from design to production. We speak your business language.",
   },
   {
-    icon: BarChart3,
-    title: "Advanced Analytics",
+    icon: Target,
+    title: "Custom Solutions",
     description:
-      "Turn data into actionable insights. Real-time dashboards, predictive analytics, and AI-powered recommendations.",
+      "Every project is unique. We design solutions perfectly tailored to your needs and business processes.",
   },
   {
-    icon: Lock,
-    title: "Enterprise Security",
+    icon: Code,
+    title: "Technical Excellence",
     description:
-      "Bank-grade encryption, SOC 2 Type II certified, and compliant with global data protection standards.",
+      "Modern technologies, quality code, robust architecture. Our developers are passionate about their craft.",
   },
   {
-    icon: Zap,
-    title: "Rapid Integration",
+    icon: Award,
+    title: "Trusted Partner",
     description:
-      "Connect with existing systems effortlessly. Pre-built connectors for 50+ enterprise applications and APIs.",
+      "97% client satisfaction, responsive support, complete transparency. We build long-term relationships.",
   },
 ];
 
@@ -45,11 +45,11 @@ const ValueProposition = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-            Why Leading Enterprises Choose SarayaTech
+            Why Businesses Trust Us
           </h2>
           <p className="text-xl text-secondary leading-relaxed">
-            Our enterprise-grade platform combines cutting-edge technology with
-            proven methodologies to deliver measurable business outcomes.
+            Our technical expertise and results-driven approach ensure
+            the success of your digital projects.
           </p>
         </motion.div>
 

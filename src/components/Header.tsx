@@ -124,7 +124,7 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Button className="w-full bg-accent hover:bg-accent-light">
-                    Request Demo
+                    Discuss My Project
                   </Button>
                 </Link>
               </motion.div>

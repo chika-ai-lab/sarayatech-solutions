@@ -11,9 +11,9 @@ import {
 } from "@/constants/animations";
 
 const STATS = [
-  { value: "50+", label: "Enterprise Clients" },
+  { value: "85+", label: "Projects Delivered" },
   { value: "5+", label: "Years Experience" },
-  { value: "97%", label: "Satisfaction Rate" },
+  { value: "97%", label: "Client Satisfaction" },
 ];
 
 const HeroSection = () => {
@@ -56,7 +56,7 @@ const HeroSection = () => {
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
               <span className="text-sm font-medium">
-                Trusted by 50+ Enterprises
+                85+ projects successfully delivered
               </span>
             </motion.div>
 
@@ -66,11 +66,11 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              Transform Your{" "}
+              Your Partner for{" "}
               <span className="bg-gradient-to-r from-gold to-accent bg-clip-text text-transparent">
-                Business
+                Digital
               </span>{" "}
-              with Enterprise Technology
+              Transformation
             </motion.h1>
 
             <motion.p
@@ -79,12 +79,12 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Unlock exponential growth with our cloud-native platforms,
-              advanced analytics, and AI-powered solutions.{" "}
+              We design and develop custom digital solutions to accelerate your growth.
+              From technical expertise to strategic consulting.{" "}
               <span className="font-semibold text-gold">
                 97% client satisfaction
               </span>{" "}
-              across industries.
+              across all industries.
             </motion.p>
 
             <motion.div
@@ -103,7 +103,7 @@ const HeroSection = () => {
                       size="lg"
                       className="bg-accent hover:bg-accent-light text-accent-foreground shadow-accent text-lg px-8 h-14 group"
                     >
-                      Request a Demo
+                      Discuss My Project
                       <ArrowRight className="ml-2 group-hover:translate-x-1 transition-smooth" />
                     </Button>
                   </motion.div>
@@ -124,7 +124,7 @@ const HeroSection = () => {
                         className="mr-2 group-hover:scale-110 transition-smooth"
                         size={20}
                       />
-                      View Realisation
+                      View Case Studies
                     </Button>
                   </motion.div>
                 </Link>
@@ -140,7 +140,7 @@ const HeroSection = () => {
                       variant="ghost"
                       className="text-white hover:bg-white/10 text-lg px-8 h-14"
                     >
-                      Talk to Expert
+                      Talk to an Expert
                     </Button>
                   </motion.div>
                 </Link>

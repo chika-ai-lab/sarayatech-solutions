@@ -12,7 +12,8 @@
     "quote": "The BMV inspection platform has revolutionized how we handle vehicle inspections. The OCR technology and streamlined booking system have significantly improved our efficiency.",
     "author": "Marie Dubois",
     "role": "Operations Manager, BMV Inspection",
-    "image": "/placeholder.svg",
+    "image": "/images/placeholder-project.svg",
+    "isActive": true,
     "link": "https://inspectionfast.com"
   },
   {
@@ -28,7 +29,8 @@
     "quote": "Saraya Auto Rental has transformed the car rental landscape in our region. The microservices architecture ensures scalability and reliability.",
     "author": "Ahmed Diallo",
     "role": "CEO, Saraya Auto Rental",
-    "image": "/placeholder.svg",
+    "image": "/images/placeholder-project.svg",
+    "isActive": false,
     "link": null
   },
   {
@@ -44,7 +46,8 @@
     "quote": "iSaraya has created a vibrant marketplace ecosystem. The integrated messaging and delivery management features have been game-changers for our business.",
     "author": "Fatou Ndiaye",
     "role": "Platform Manager, iSaraya",
-    "image": "/placeholder.svg",
+    "image": "/images/isaraya.png",
+    "isActive": true,
     "link": "https://isarayas.com/"
   },
   {
@@ -60,8 +63,9 @@
     "quote": "The MIMAP platform has transformed our clinic operations. Managing consultations, prescriptions, and certificates is now seamless and efficient.",
     "author": "Dr. Mohamed Lemine",
     "role": "Medical Director, MIMAP",
-    "image": "/placeholder.svg",
-    "link": "https://workspace.mimapeds.com"
+    "image": "/images/mimap.png",
+    "isActive": true,
+    "link": "https://mimapeds.com/"
   },
   {
     "company": "ASTA",
@@ -76,7 +80,8 @@
     "quote": "ASTA has become the leading tech education platform in Senegal. Our graduates are highly sought after by employers across the region.",
     "author": "Professor Amadou Ba",
     "role": "Director, American Senegalese Tech Academy",
-    "image": "/placeholder.svg",
+    "image": "/images/placeholder-project.svg",
+    "isActive": true,
     "link": "https://asta-edu.com/"
   },
   {
@@ -92,7 +97,8 @@
     "quote": "The DGFPT platform has modernized our accreditation processes. The digital system has significantly improved efficiency and transparency.",
     "author": "Mamadou Sow",
     "role": "IT Director, DGFPT",
-    "image": "/placeholder.svg",
+    "image": "/images/placeholder-project.svg",
+    "isActive": true,
     "link": "https://dev.dgfpt.portal.sarayatechsenegal.com/"
   },
   {
@@ -108,7 +114,8 @@
     "quote": "Our new website perfectly represents SarayaTech's expertise and innovation. It has significantly increased our project inquiries and brand visibility.",
     "author": "Cheikh Diop",
     "role": "CEO, SarayaTech Senegal",
-    "image": "/placeholder.svg",
+    "image": "/images/placeholder-project.svg",
+    "isActive": true,
     "link": "https://sarayatechsenegal.com/"
   }
 ]

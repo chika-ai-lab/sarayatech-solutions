@@ -117,43 +117,19 @@ const SolutionDetails = () => {
                       <p className="text-gray-600 mb-4">{solution.subtitle}</p>
 
                       <div className="flex flex-wrap items-center gap-4 text-sm">
-                        <div className="flex items-center gap-1">
-                          <img
-                            src="https://i.pravatar.cc/32?img=1"
-                            alt=""
-                            className="w-6 h-6 rounded-full"
-                          />
-                          <img
-                            src="https://i.pravatar.cc/32?img=2"
-                            alt=""
-                            className="w-6 h-6 rounded-full -ml-2"
-                          />
-                          <img
-                            src="https://i.pravatar.cc/32?img=3"
-                            alt=""
-                            className="w-6 h-6 rounded-full -ml-2"
-                          />
-                          <span className="ml-1 text-gray-600">
-                            +2.5k users
+                        <div className="flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          <span className="text-gray-700">
+                            Custom-built for your needs
                           </span>
                         </div>
 
-                        <div className="flex items-center gap-1">
-                          <div className="flex">
-                            {[1, 2, 3, 4, 5].map((i) => (
-                              <Star
-                                key={i}
-                                className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                              />
-                            ))}
-                          </div>
-                          <span className="font-medium">4.9</span>
-                          <span className="text-gray-600">(127 reviews)</span>
+                        <div className="flex items-center gap-2">
+                          <Check className="w-5 h-5 text-green-500" />
+                          <span className="text-gray-700">
+                            End-to-end support
+                          </span>
                         </div>
-
-                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
-                          Active
-                        </span>
 
                         <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
                           {solution.badge}
@@ -440,109 +416,63 @@ const SolutionDetails = () => {
                   {activeTab === "reviews" && (
                     <div>
                       <h2 className="text-2xl font-bold mb-6">
-                        Customer Reviews
+                        Client Success Stories
                       </h2>
+                      <div className="space-y-4 mb-8">
+                        <p className="text-gray-600">
+                          See how our clients have transformed their business with
+                          custom solutions tailored to their specific needs.
+                        </p>
+                      </div>
+
                       <div className="space-y-6">
-                        <div className="flex items-center gap-8 p-6 bg-gray-50 rounded-lg">
-                          <div className="text-center">
-                            <div className="text-5xl font-bold text-primary mb-2">
-                              4.9
+                        {[
+                          {
+                            name: "Sarah Johnson",
+                            company: "TechCorp Inc.",
+                            role: "CTO",
+                            comment:
+                              "Working with SarayaTech was a game-changer. They took the time to understand our unique challenges and built a solution that perfectly fits our workflow. The team's expertise and dedication were exceptional.",
+                          },
+                          {
+                            name: "Michael Chen",
+                            company: "HealthPlus",
+                            role: "Director of Operations",
+                            comment:
+                              "The custom dashboard they developed has transformed how we monitor patient data. The solution exceeded our expectations, and their ongoing support has been outstanding.",
+                          },
+                          {
+                            name: "Emily Rodriguez",
+                            company: "FinanceFlow",
+                            role: "Product Manager",
+                            comment:
+                              "SarayaTech delivered a robust data platform that scales with our needs. Their agile approach and constant communication made the entire process smooth and efficient.",
+                          },
+                        ].map((testimonial, i) => (
+                          <div key={i} className="p-6 border rounded-lg bg-white">
+                            <div className="flex items-start gap-4 mb-4">
+                              <img
+                                src={`https://i.pravatar.cc/48?img=${i + 10}`}
+                                alt={testimonial.name}
+                                className="w-12 h-12 rounded-full"
+                              />
+                              <div className="flex-1">
+                                <h4 className="font-semibold">
+                                  {testimonial.name}
+                                </h4>
+                                <p className="text-sm text-gray-600">
+                                  {testimonial.role}
+                                </p>
+                                <p className="text-sm text-primary font-medium">
+                                  {testimonial.company}
+                                </p>
+                              </div>
                             </div>
-                            <div className="flex gap-1 mb-2">
-                              {[1, 2, 3, 4, 5].map((i) => (
-                                <Star
-                                  key={i}
-                                  className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                                />
-                              ))}
-                            </div>
-                            <p className="text-sm text-gray-600">
-                              Based on 127 reviews
+                            <p className="text-gray-700 italic">
+                              "{testimonial.comment}"
                             </p>
                           </div>
-                          <div className="flex-1 space-y-2">
-                            {[5, 4, 3, 2, 1].map((rating) => (
-                              <div
-                                key={rating}
-                                className="flex items-center gap-3"
-                              >
-                                <span className="text-sm w-12">
-                                  {rating} stars
-                                </span>
-                                <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                  <div
-                                    className="h-full bg-primary rounded-full"
-                                    style={{
-                                      width: `${
-                                        rating === 5
-                                          ? 85
-                                          : rating === 4
-                                          ? 10
-                                          : 3
-                                      }%`,
-                                    }}
-                                  ></div>
-                                </div>
-                                <span className="text-sm text-gray-600 w-12">
-                                  {rating === 5 ? 108 : rating === 4 ? 13 : 6}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="space-y-4">
-                          {[
-                            {
-                              name: "Sarah Johnson",
-                              role: "Data Analyst",
-                              rating: 5,
-                              comment:
-                                "Excellent platform with powerful analytics capabilities. Has transformed how we handle our data.",
-                            },
-                            {
-                              name: "Michael Chen",
-                              role: "CTO",
-                              rating: 5,
-                              comment:
-                                "Best investment we've made this year. The ROI was visible within the first month.",
-                            },
-                            {
-                              name: "Emily Rodriguez",
-                              role: "Product Manager",
-                              rating: 4,
-                              comment:
-                                "Great features overall. Support team is very responsive and helpful.",
-                            },
-                          ].map((review, i) => (
-                            <div key={i} className="p-6 border rounded-lg">
-                              <div className="flex items-start gap-4 mb-4">
-                                <img
-                                  src={`https://i.pravatar.cc/48?img=${i + 10}`}
-                                  alt={review.name}
-                                  className="w-12 h-12 rounded-full"
-                                />
-                                <div className="flex-1">
-                                  <h4 className="font-semibold">
-                                    {review.name}
-                                  </h4>
-                                  <p className="text-sm text-gray-600">
-                                    {review.role}
-                                  </p>
-                                </div>
-                                <div className="flex gap-1">
-                                  {[...Array(review.rating)].map((_, j) => (
-                                    <Star
-                                      key={j}
-                                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                                    />
-                                  ))}
-                                </div>
-                              </div>
-                              <p className="text-gray-700">{review.comment}</p>
-                            </div>
-                          ))}
-                        </div>
+                        ))}
                       </div>
                     </div>
                   )}
@@ -650,116 +580,144 @@ const SolutionDetails = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
-              {/* Pricing Card */}
+              {/* Get Started Card */}
               <div className="bg-white rounded-lg shadow-sm border p-6 sticky top-24">
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold">$299</span>
-                    <span className="text-gray-600">/month</span>
-                  </div>
-                  <p className="text-sm text-gray-600">Enterprise Plan</p>
+                  <h3 className="text-2xl font-bold mb-2">Get Started</h3>
+                  <p className="text-sm text-gray-600">
+                    Let's discuss your project and build a custom solution
+                  </p>
                 </div>
 
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-2 text-sm">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>Unlimited dashboards</span>
+                    <span>Free initial consultation</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>Advanced analytics</span>
+                    <span>Custom proposal & quote</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>24/7 support</span>
+                    <span>Flexible engagement models</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span>Custom integrations</span>
+                    <span>Ongoing support & maintenance</span>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <Button className="w-full bg-primary hover:bg-primary/90">
-                    Start Free Trial
+                    Schedule a Consultation
                   </Button>
                   <Button variant="outline" className="w-full">
-                    Request Demo
+                    View Case Studies
                   </Button>
                 </div>
               </div>
 
-              {/* Provider Card */}
+              {/* Why Choose Us Card */}
               <div className="bg-white rounded-lg shadow-sm border p-6">
-                <h3 className="font-bold mb-4">Solution Provider</h3>
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-lg">DT</span>
+                <h3 className="font-bold mb-4">Why Choose Us</h3>
+
+                <div className="space-y-4 mb-4">
+                  <div className="flex gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Users className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1">Expert Team</h4>
+                      <p className="text-xs text-gray-600">
+                        5+ years of industry experience
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold">DataTech Solutions</h4>
-                    <p className="text-sm text-gray-600">Verified Partner</p>
+
+                  <div className="flex gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1">Proven Track Record</h4>
+                      <p className="text-xs text-gray-600">
+                        85+ successful projects delivered
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Shield className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1">Quality Assurance</h4>
+                      <p className="text-xs text-gray-600">
+                        97% client satisfaction rate
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="space-y-2 text-sm mb-4">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Founded</span>
-                    <span className="font-medium">2018</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Employees</span>
-                    <span className="font-medium">50+</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Headquarters</span>
-                    <span className="font-medium">San Francisco</span>
-                  </div>
-                </div>
-
-                <Button variant="outline" className="w-full">
-                  View Profile
-                </Button>
+                <Link to="/about">
+                  <Button variant="outline" className="w-full">
+                    Learn More About Us
+                  </Button>
+                </Link>
               </div>
 
-              {/* Related Solutions */}
+              {/* Related Services */}
               <div className="bg-white rounded-lg shadow-sm border p-6">
-                <h3 className="font-bold mb-4">Related Solutions</h3>
+                <h3 className="font-bold mb-4">Related Services</h3>
                 <div className="space-y-4">
-                  {[
-                    {
-                      name: "Data Warehouse Pro",
-                      desc: "Cloud data storage",
-                      color: "bg-green-500",
-                    },
-                    {
-                      name: "ML Intelligence Suite",
-                      desc: "Machine learning platform",
-                      color: "bg-orange-500",
-                    },
-                    {
-                      name: "Integration Hub",
-                      desc: "API management",
-                      color: "bg-purple-500",
-                    },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
-                    >
-                      <div
-                        className={`w-10 h-10 ${item.color} rounded-lg flex-shrink-0`}
-                      ></div>
+                  <Link to="/solutions/cloud-infrastructure" className="block">
+                    <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <Cloud className="w-5 h-5 text-white" />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium text-sm truncate">
-                          {item.name}
+                          Cloud & Infrastructure
                         </h4>
                         <p className="text-xs text-gray-600 truncate">
-                          {item.desc}
+                          DevOps and cloud migration
                         </p>
                       </div>
                     </div>
-                  ))}
+                  </Link>
+
+                  <Link to="/solutions/digital-strategy-consulting" className="block">
+                    <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                      <div className="w-10 h-10 bg-purple-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <Brain className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-medium text-sm truncate">
+                          Strategy & Consulting
+                        </h4>
+                        <p className="text-xs text-gray-600 truncate">
+                          Digital transformation roadmap
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link to="/solutions/security-compliance" className="block">
+                    <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex-shrink-0 flex items-center justify-center">
+                        <Shield className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-medium text-sm truncate">
+                          Security & Compliance
+                        </h4>
+                        <p className="text-xs text-gray-600 truncate">
+                          Security audit and GDPR
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

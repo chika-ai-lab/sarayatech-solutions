@@ -66,12 +66,12 @@ const About = () => {
             animate="visible"
           >
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-              Building the Future of{" "}
-              <span className="text-gold">Enterprise Technology</span>
+              Building Digital Solutions that{" "}
+              <span className="text-gold">Make a Difference</span>
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-              Since 2020, we've been empowering organizations to achieve
-              extraordinary outcomes through innovative technology solutions.
+              Since 2020, we've been supporting organizations in their digital transformation
+              with expertise, passion and commitment.
             </p>
           </motion.div>
         </div>
@@ -91,22 +91,19 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-bold">Our Mission</h2>
               <div className="space-y-4 text-lg text-secondary leading-relaxed">
                 <p>
-                  At SarayaTech, we believe that technology should empower, not
-                  complicate. Our mission is to deliver enterprise-grade
-                  solutions that are powerful yet accessible, scalable yet
-                  secure.
+                  At SarayaTech, we believe technology should simplify, not complicate.
+                  Our mission is to design and develop custom digital solutions that
+                  precisely meet our clients' needs.
                 </p>
                 <p>
-                  We partner with organizations across industries to navigate
-                  complex digital challenges and unlock new opportunities for
-                  growth. Through innovation, expertise, and unwavering
-                  commitment, we transform how businesses operate in the digital
-                  age.
+                  We support organizations across all sectors with their digital challenges,
+                  from strategy to implementation. Through our technical expertise, agile
+                  approach and unwavering commitment, we transform your ideas into
+                  concrete solutions.
                 </p>
                 <p>
-                  Based in Columbus, Ohio, we serve 50+ enterprise clients
-                  across 5+ countries, delivering measurable impact and
-                  sustainable competitive advantage.
+                  We've delivered over 85 projects for local and international clients,
+                  providing measurable and sustainable impact.
                 </p>
               </div>
             </motion.div>
@@ -119,8 +116,8 @@ const About = () => {
               viewport={{ once: true }}
             >
               {[
-                { icon: Users, value: "50+", label: "Clients" },
-                { icon: Globe, value: "5+", label: "Countries" },
+                { icon: Users, value: "85+", label: "Projects" },
+                { icon: Globe, value: "6+", label: "Industries" },
                 { icon: Award, value: "5+", label: "Years" },
                 { icon: Zap, value: "97%", label: "Satisfaction" },
               ].map((stat) => {
@@ -160,7 +157,7 @@ const About = () => {
             </h2>
             <p className="text-xl text-secondary leading-relaxed">
               These principles guide every decision we make and every solution
-              we deliver
+              we develop
             </p>
           </motion.div>
 
@@ -212,7 +209,7 @@ const About = () => {
               Leadership Team
             </h2>
             <p className="text-xl text-secondary leading-relaxed">
-              Industry veterans driving innovation and excellence
+              Passionate experts driving innovation and excellence
             </p>
           </motion.div>
 

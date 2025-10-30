@@ -1,499 +1,559 @@
 [
   {
-    "id": "cloud-platform",
-    "icon": "Cloud",
-    "title": "Cloud Platform",
-    "subtitle": "Build, deploy, and scale applications on a cloud platform designed for enterprise performance, security, and reliability.",
-    "badge": "Cloud Platform",
-    "badgeIcon": "Cloud",
-    "category": "Cloud Platform",
-    "description": "Enterprise-grade cloud infrastructure with multi-cloud support, auto-scaling, and 99.99% uptime SLA.",
+    "id": "web-mobile-development",
+    "icon": "Globe",
+    "title": "Web & Mobile Development",
+    "subtitle": "Custom web and mobile applications tailored to your business needs and optimized for exceptional user experience",
+    "badge": "Web & Mobile",
+    "badgeIcon": "Globe",
+    "category": "Development",
+    "description": "We design and develop high-performance, scalable web and mobile applications perfectly aligned with your business objectives.",
     "overview": [
-      "SarayaTech Cloud Platform provides enterprise-grade infrastructure with unmatched flexibility, security, and performance. Whether you're migrating legacy systems or building cloud-native applications, our platform delivers the tools and capabilities you need.",
-      "Used by Fortune 500 companies across finance, healthcare, manufacturing, and retail, our cloud platform handles billions of transactions daily with 99.99% uptime."
+      "Our expert team guides businesses through the design and development of custom digital solutions. From responsive web applications to native mobile apps, we master the full spectrum of modern technologies to create exceptional user experiences.",
+      "With over 50 projects delivered for clients across various sectors (healthcare, education, transportation, services), we transform your ideas into performant and sustainable digital solutions."
+    ],
+    "features": [
+      {
+        "icon": "Globe",
+        "title": "Modern Web Applications",
+        "description": "React, Vue.js, Angular - High-performance responsive interfaces"
+      },
+      {
+        "icon": "Smartphone",
+        "title": "Native Mobile Apps",
+        "description": "iOS and Android - Optimized native experiences"
+      },
+      {
+        "icon": "Zap",
+        "title": "Progressive Web Apps (PWA)",
+        "description": "Web applications with advanced mobile capabilities"
+      },
+      {
+        "icon": "Code",
+        "title": "Robust API & Backend",
+        "description": "Node.js, Python, .NET - Scalable architecture"
+      },
+      {
+        "icon": "Palette",
+        "title": "UI/UX Design",
+        "description": "Intuitive user-centered interfaces"
+      },
+      {
+        "icon": "Workflow",
+        "title": "Third-Party Integrations",
+        "description": "Connect with your existing systems and external APIs"
+      },
+      {
+        "icon": "Shield",
+        "title": "Security & Compliance",
+        "description": "Security standards and regulatory compliance"
+      },
+      {
+        "icon": "Users",
+        "title": "Training & Support",
+        "description": "Post-launch support and user training"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "50+",
+        "label": "Projects Delivered",
+        "description": "Successful applications"
+      },
+      {
+        "metric": "95%",
+        "label": "Client Satisfaction",
+        "description": "Clients recommend our services"
+      },
+      {
+        "metric": "3 months",
+        "label": "Average Timeline",
+        "description": "From idea to launch"
+      },
+      {
+        "metric": "100%",
+        "label": "Custom Built",
+        "description": "Solutions tailored to your needs"
+      }
+    ],
+    "benefitsList": [
+      "Modern and performant technologies",
+      "Agile and iterative approach",
+      "Quality and maintainable code",
+      "End-to-end support"
+    ],
+    "featuresList": ["Web", "Mobile", "PWA"],
+    "image": "dashboard-mockup",
+    "link": "/solutions/web-mobile-development",
+    "reverse": false,
+    "ctaTitle": "Ready to Digitize Your Business?",
+    "ctaDescription": "Let's discuss your project and explore the best technical solutions together",
+    "ctaButton": "Discuss My Project",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "data-bi-solutions",
+    "icon": "Database",
+    "title": "Data & Business Intelligence Solutions",
+    "subtitle": "Transform your data into strategic insights with custom dashboards and analytics tools",
+    "badge": "Data & BI",
+    "badgeIcon": "Database",
+    "category": "Data & Analytics",
+    "description": "We develop data analysis and business intelligence solutions tailored to your business needs for informed decision-making.",
+    "overview": [
+      "Our data experts guide you in maximizing the value of your data through analysis, visualization, and reporting solutions tailored to your business challenges. We create interactive dashboards, robust data pipelines, and decision support systems.",
+      "From collection to visualization, through processing and analysis, we master the entire data value chain to help you make the best business decisions."
+    ],
+    "features": [
+      {
+        "icon": "BarChart3",
+        "title": "Custom Dashboards",
+        "description": "Interactive visualizations tailored to your KPIs"
+      },
+      {
+        "icon": "Database",
+        "title": "Data Warehousing",
+        "description": "Centralization and structuring of your data"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Advanced Analytics",
+        "description": "Predictive analysis and statistical models"
+      },
+      {
+        "icon": "Workflow",
+        "title": "ETL & Pipelines",
+        "description": "Automation of data flows"
+      },
+      {
+        "icon": "Brain",
+        "title": "Data Science & AI",
+        "description": "ML models for predictive insights"
+      },
+      {
+        "icon": "FileSpreadsheet",
+        "title": "Automated Reporting",
+        "description": "Automated periodic reports"
+      },
+      {
+        "icon": "Link2",
+        "title": "Multi-Source Integration",
+        "description": "Connect to your databases and APIs"
+      },
+      {
+        "icon": "Shield",
+        "title": "Data Governance",
+        "description": "Quality, security and GDPR compliance"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "30+",
+        "label": "Data Projects",
+        "description": "BI solutions deployed"
+      },
+      {
+        "metric": "70%",
+        "label": "Time Saved",
+        "description": "In data analysis"
+      },
+      {
+        "metric": "360°",
+        "label": "Complete Vision",
+        "description": "Of your business"
+      },
+      {
+        "metric": "Real-time",
+        "label": "Live Data",
+        "description": "Updated dashboards"
+      }
+    ],
+    "benefitsList": [
+      "Custom dashboards with Power BI, Tableau, or custom solutions",
+      "Automated data pipelines",
+      "Predictive analytics and Machine Learning",
+      "Team training on tools"
+    ],
+    "featuresList": ["Dashboards", "ETL", "Analytics"],
+    "image": "dashboard-mockup",
+    "link": "/solutions/data-bi-solutions",
+    "reverse": true,
+    "ctaTitle": "Unlock the Value of Your Data",
+    "ctaDescription": "Discover how to transform your data into competitive advantage",
+    "ctaButton": "Request a Demo",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "custom-business-software",
+    "icon": "Cpu",
+    "title": "Custom Business Software Development",
+    "subtitle": "Tailored software solutions to automate and optimize your specific business processes",
+    "badge": "Business Software",
+    "badgeIcon": "Cpu",
+    "category": "Development",
+    "description": "We design custom business software that perfectly adapts to your processes and specific needs.",
+    "overview": [
+      "Every business has unique needs. Our experts develop tailored software solutions that integrate perfectly with your business processes: ERP, CRM, management systems, specialized business platforms, internal tools, and more.",
+      "From analyzing your needs to production deployment, through design and development, we support you at every step to create the solution that truly fits you."
+    ],
+    "features": [
+      {
+        "icon": "Layers",
+        "title": "Modular Architecture",
+        "description": "Scalable and adaptable solutions"
+      },
+      {
+        "icon": "Cpu",
+        "title": "Full-Stack Development",
+        "description": "Frontend, Backend, Database"
+      },
+      {
+        "icon": "Link2",
+        "title": "System Integrations",
+        "description": "Connect with your existing tools"
+      },
+      {
+        "icon": "Workflow",
+        "title": "Process Automation",
+        "description": "Automated business workflows"
+      },
+      {
+        "icon": "Users",
+        "title": "Multi-User Management",
+        "description": "Roles, permissions, collaboration"
+      },
+      {
+        "icon": "Cloud",
+        "title": "Cloud or On-Premise Deployment",
+        "description": "Infrastructure flexibility"
+      },
+      {
+        "icon": "Shield",
+        "title": "Enhanced Security",
+        "description": "Authentication, encryption, audit"
+      },
+      {
+        "icon": "Headphones",
+        "title": "Support & Maintenance",
+        "description": "Long-term support"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "40+",
+        "label": "Software Created",
+        "description": "Business solutions deployed"
+      },
+      {
+        "metric": "60%",
+        "label": "Productivity",
+        "description": "Average gain observed"
+      },
+      {
+        "metric": "100%",
+        "label": "Customized",
+        "description": "Adapted to your processes"
+      },
+      {
+        "metric": "Long-term",
+        "label": "Partnership",
+        "description": "Ongoing support"
+      }
+    ],
+    "benefitsList": [
+      "In-depth analysis of your business needs",
+      "Robust and scalable technical architecture",
+      "Agile development with continuous feedback",
+      "Complete documentation and training"
+    ],
+    "featuresList": ["Custom", "Integrations", "Scalable"],
+    "image": "dashboard-mockup",
+    "link": "/solutions/custom-business-software",
+    "reverse": false,
+    "ctaTitle": "Automate Your Business Processes",
+    "ctaDescription": "Let's explore how custom software can transform your business",
+    "ctaButton": "Discuss My Needs",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cloud-infrastructure",
+    "icon": "Server",
+    "title": "Cloud & Infrastructure Services",
+    "subtitle": "Consulting, setup and management of secure, high-performance and optimized cloud infrastructures",
+    "badge": "Infrastructure",
+    "badgeIcon": "Server",
+    "category": "Infrastructure",
+    "description": "We guide you in designing, deploying and optimizing your cloud infrastructure for performance and security.",
+    "overview": [
+      "Our DevOps team helps you design and implement modern, secure and high-performance cloud infrastructures. Cloud migration, multi-cloud architecture, containerization, CI/CD, monitoring - we master the entire cloud ecosystem.",
+      "Whether you want to migrate to the cloud, optimize your existing infrastructure or implement DevOps practices, we support you with expertise and pragmatism."
     ],
     "features": [
       {
         "icon": "Cloud",
-        "title": "Multi-Cloud Orchestration",
-        "description": "Seamlessly manage workloads across AWS, Azure, and Google Cloud"
+        "title": "Cloud Consulting",
+        "description": "Tailored cloud strategy and architecture"
       },
-      {
-        "icon": "Zap",
-        "title": "Auto-Scaling Infrastructure",
-        "description": "Automatically scale resources based on demand"
-      },
-      {
-        "icon": "Shield",
-        "title": "Enterprise Security",
-        "description": "Bank-grade encryption and compliance certifications"
-      },
-      {
-        "icon": "Globe",
-        "title": "Global CDN Integration",
-        "description": "Lightning-fast content delivery worldwide"
-      },
-      {
-        "icon": "Database",
-        "title": "Managed Databases",
-        "description": "Fully managed SQL and NoSQL databases"
-      },
-      {
-        "icon": "Cpu",
-        "title": "Container Orchestration",
-        "description": "Kubernetes-powered container management"
-      },
-      {
-        "icon": "Lock",
-        "title": "Identity & Access",
-        "description": "Advanced IAM with SSO and MFA"
-      },
-      {
-        "icon": "TrendingUp",
-        "title": "Cost Optimization",
-        "description": "AI-powered resource optimization to reduce costs"
-      }
-    ],
-    "benefits": [
-      {
-        "metric": "99.99%",
-        "label": "Uptime SLA",
-        "description": "Industry-leading reliability"
-      },
-      {
-        "metric": "10x",
-        "label": "Faster Deployment",
-        "description": "From weeks to hours"
-      },
-      {
-        "metric": "60%",
-        "label": "Cost Reduction",
-        "description": "Optimized resource usage"
-      },
-      {
-        "metric": "150+",
-        "label": "Regions",
-        "description": "Global infrastructure"
-      }
-    ],
-    "benefitsList": [
-      "Multi-cloud orchestration",
-      "Auto-scaling infrastructure",
-      "99.99% uptime guarantee",
-      "Global CDN integration"
-    ],
-    "featuresList": ["Multi-cloud", "Auto-scaling", "Global CDN"],
-    "image": "architecture-illustration",
-    "link": "/solutions/cloud-platform",
-    "reverse": false,
-    "ctaTitle": "Ready to Transform Your Infrastructure?",
-    "ctaDescription": "Schedule a personalized demo and see how our cloud platform can accelerate your business",
-    "ctaButton": "Schedule Demo",
-    "createdAt": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "data-analytics",
-    "icon": "Database",
-    "title": "Data Analytics Suite",
-    "subtitle": "Transform data into actionable insights with real-time processing and predictive analytics",
-    "badge": "Data Analytics",
-    "badgeIcon": "Database",
-    "category": "Data Analytics",
-    "description": "Transform raw data into strategic insights with our comprehensive analytics and business intelligence platform.",
-    "overview": [
-      "Our comprehensive data analytics suite empowers organizations to unlock the full potential of their data. From real-time processing to advanced predictive analytics, we provide the tools and expertise needed to turn raw data into strategic business advantages.",
-      "Trusted by leading enterprises across industries, our analytics platform processes petabytes of data daily, delivering insights that drive measurable business outcomes."
-    ],
-    "features": [
-      {
-        "icon": "Database",
-        "title": "Real-time Processing",
-        "description": "Process and analyze data streams in real-time"
-      },
-      {
-        "icon": "TrendingUp",
-        "title": "Predictive Analytics",
-        "description": "AI-powered forecasting and trend analysis"
-      },
-      {
-        "icon": "BarChart3",
-        "title": "Custom Dashboards",
-        "description": "Interactive visualizations tailored to your needs"
-      },
-      {
-        "icon": "Brain",
-        "title": "AI Recommendations",
-        "description": "Smart insights and automated decision support"
-      },
-      {
-        "icon": "Shield",
-        "title": "Data Security",
-        "description": "Enterprise-grade encryption and compliance"
-      },
-      {
-        "icon": "Zap",
-        "title": "High Performance",
-        "description": "Sub-second query response times"
-      },
-      {
-        "icon": "Globe",
-        "title": "Global Scale",
-        "description": "Handle massive datasets across regions"
-      },
-      {
-        "icon": "Users",
-        "title": "Multi-User Collaboration",
-        "description": "Share insights across teams securely"
-      }
-    ],
-    "benefits": [
-      {
-        "metric": "100x",
-        "label": "Faster Insights",
-        "description": "From days to minutes"
-      },
-      {
-        "metric": "95%",
-        "label": "Accuracy Rate",
-        "description": "Highly reliable predictions"
-      },
-      {
-        "metric": "80%",
-        "label": "Cost Savings",
-        "description": "Reduced manual analysis"
-      },
-      {
-        "metric": "50+",
-        "label": "Data Sources",
-        "description": "Comprehensive integration"
-      }
-    ],
-    "benefitsList": [
-      "Real-time data processing",
-      "Predictive analytics engine",
-      "Custom dashboard builder",
-      "AI-powered recommendations"
-    ],
-    "featuresList": ["Real-time", "Predictive AI", "Dashboards"],
-    "image": "dashboard-mockup",
-    "link": "/solutions/data-analytics",
-    "reverse": true,
-    "ctaTitle": "Unlock the Power of Your Data",
-    "ctaDescription": "See how our analytics suite can transform your decision-making process",
-    "ctaButton": "Request Demo",
-    "createdAt": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "enterprise-software",
-    "icon": "Cpu",
-    "title": "Enterprise Software Platform",
-    "subtitle": "Mission-critical applications with API-first design and 50+ integrations",
-    "badge": "Enterprise Software",
-    "badgeIcon": "Cpu",
-    "category": "Enterprise Software",
-    "description": "Mission-critical applications built for scale, security, and seamless integration across your technology stack.",
-    "overview": [
-      "Our enterprise software solutions are designed to meet the complex needs of modern businesses. With API-first architecture and extensive integration capabilities, our applications seamlessly connect with your existing technology stack.",
-      "Serving over 500 enterprise clients worldwide, our software solutions have proven reliability, scalability, and the flexibility to adapt to evolving business requirements."
-    ],
-    "features": [
-      {
-        "icon": "Puzzle",
-        "title": "Modular Architecture",
-        "description": "Flexible components that adapt to your needs"
-      },
-      {
-        "icon": "Cpu",
-        "title": "API-First Design",
-        "description": "RESTful and GraphQL APIs for seamless integration"
-      },
-      {
-        "icon": "Link2",
-        "title": "50+ Integrations",
-        "description": "Connect with all your essential business tools"
-      },
-      {
-        "icon": "Palette",
-        "title": "White-Label Ready",
-        "description": "Customize branding to match your identity"
-      },
-      {
-        "icon": "Shield",
-        "title": "Enterprise Security",
-        "description": "Advanced security and compliance features"
-      },
-      {
-        "icon": "Zap",
-        "title": "High Performance",
-        "description": "Optimized for speed and reliability"
-      },
-      {
-        "icon": "Globe",
-        "title": "Global Deployment",
-        "description": "Multi-region deployment options"
-      },
-      {
-        "icon": "Users",
-        "title": "User Management",
-        "description": "Comprehensive user and role management"
-      }
-    ],
-    "benefits": [
-      {
-        "metric": "99.9%",
-        "label": "Uptime",
-        "description": "Reliable 24/7 operation"
-      },
-      {
-        "metric": "50+",
-        "label": "Integrations",
-        "description": "Extensive ecosystem"
-      },
-      {
-        "metric": "50%",
-        "label": "Faster Implementation",
-        "description": "Rapid deployment"
-      },
-      {
-        "metric": "24/7",
-        "label": "Support",
-        "description": "Round-the-clock assistance"
-      }
-    ],
-    "benefitsList": [
-      "Modular architecture",
-      "API-first design",
-      "50+ pre-built integrations",
-      "White-label capabilities"
-    ],
-    "featuresList": ["API-first", "50+ integrations", "White-label"],
-    "image": "dashboard-mockup",
-    "link": "/solutions/enterprise-software",
-    "reverse": false,
-    "ctaTitle": "Transform Your Business Operations",
-    "ctaDescription": "Discover how our enterprise software can streamline your workflows",
-    "ctaButton": "Request Demo",
-    "createdAt": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "infrastructure",
-    "icon": "Server",
-    "title": "Infrastructure Management",
-    "subtitle": "Comprehensive infrastructure monitoring and management with automated scaling and disaster recovery",
-    "badge": "Infrastructure",
-    "badgeIcon": "Server",
-    "category": "Cloud Platform",
-    "description": "Comprehensive infrastructure monitoring and management with automated scaling and disaster recovery.",
-    "overview": [
-      "Our Infrastructure Management solution provides comprehensive monitoring, automated scaling, and disaster recovery capabilities to ensure your systems remain reliable and performant.",
-      "Built for enterprise environments, this solution offers real-time monitoring, automated failover, and intelligent resource optimization."
-    ],
-    "features": [
       {
         "icon": "Server",
-        "title": "Infrastructure Monitoring",
-        "description": "Real-time monitoring of all infrastructure components"
+        "title": "Cloud Migration",
+        "description": "AWS, Azure, Google Cloud - Secure migration"
+      },
+      {
+        "icon": "Container",
+        "title": "Containerization",
+        "description": "Docker, Kubernetes - Modern orchestration"
+      },
+      {
+        "icon": "GitBranch",
+        "title": "CI/CD Pipelines",
+        "description": "Automated deployments"
+      },
+      {
+        "icon": "Activity",
+        "title": "Monitoring & Observability",
+        "description": "Proactive monitoring and alerting"
       },
       {
         "icon": "Zap",
-        "title": "Auto-Scaling",
-        "description": "Automatic scaling based on demand patterns"
+        "title": "Performance Optimization",
+        "description": "Tuning and cost optimization"
       },
       {
         "icon": "Shield",
-        "title": "Disaster Recovery",
-        "description": "Automated backup and recovery solutions"
+        "title": "Infrastructure Security",
+        "description": "Hardening, backup, disaster recovery"
       },
       {
-        "icon": "TrendingUp",
-        "title": "Performance Optimization",
-        "description": "AI-driven performance tuning and optimization"
+        "icon": "Headphones",
+        "title": "Infrastructure Support",
+        "description": "Maintenance and technical support"
       }
     ],
     "benefits": [
       {
-        "metric": "99.95%",
-        "label": "Availability",
-        "description": "High availability guarantee"
-      },
-      {
-        "metric": "5x",
-        "label": "Faster Recovery",
-        "description": "Rapid disaster recovery"
+        "metric": "25+",
+        "label": "Infrastructures",
+        "description": "Cloud projects completed"
       },
       {
         "metric": "40%",
-        "label": "Cost Savings",
-        "description": "Optimized resource usage"
+        "label": "Optimized Costs",
+        "description": "Average cloud savings"
+      },
+      {
+        "metric": "99.9%",
+        "label": "Availability",
+        "description": "Highly available infrastructures"
       },
       {
         "metric": "24/7",
         "label": "Monitoring",
-        "description": "Continuous system monitoring"
+        "description": "Continuous surveillance"
       }
     ],
     "benefitsList": [
-      "Auto-scaling infrastructure",
-      "Real-time monitoring",
-      "Automated disaster recovery",
-      "Performance optimization"
+      "Multi-cloud expertise (AWS, Azure, GCP)",
+      "Complete automation (IaC, CI/CD)",
+      "Guaranteed security and compliance",
+      "Continuous cost optimization"
     ],
-    "featuresList": ["Auto-scaling", "Monitoring", "Recovery"],
+    "featuresList": ["Cloud", "DevOps", "Monitoring"],
     "image": "architecture-illustration",
-    "link": "/solutions/infrastructure",
+    "link": "/solutions/cloud-infrastructure",
     "reverse": true,
-    "ctaTitle": "Secure Your Infrastructure",
-    "ctaDescription": "Get comprehensive infrastructure management and monitoring solutions",
-    "ctaButton": "Get Started",
+    "ctaTitle": "Modernize Your Infrastructure",
+    "ctaDescription": "Discover how to optimize your cloud infrastructure with our experts",
+    "ctaButton": "Free Audit",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
-    "id": "security",
-    "icon": "Shield",
-    "title": "Security Suite",
-    "subtitle": "Advanced security solutions with threat detection, encryption, and compliance management",
-    "badge": "Security",
-    "badgeIcon": "Shield",
-    "category": "Enterprise Software",
-    "description": "Advanced security solutions with threat detection, encryption, and compliance management.",
+    "id": "digital-strategy-consulting",
+    "icon": "Lightbulb",
+    "title": "Digital Strategy & Consulting",
+    "subtitle": "Strategic support to define and successfully execute your digital transformation",
+    "badge": "Consulting",
+    "badgeIcon": "Lightbulb",
+    "category": "Consulting",
+    "description": "We support you in defining and implementing your digital strategy for concrete and measurable results.",
     "overview": [
-      "Our Security Suite provides comprehensive protection for your digital assets with advanced threat detection, encryption, and compliance management.",
-      "Designed for enterprise security requirements, this solution ensures your data remains protected against evolving cyber threats."
+      "Before launching a digital project, it's essential to define a clear strategy aligned with your business objectives. Our consultants support you in auditing your existing setup, defining your digital roadmap and managing your projects.",
+      "From technical audit to architecture definition, through technology selection and project management, we bring you the expertise needed to make the right decisions."
     ],
     "features": [
       {
+        "icon": "Search",
+        "title": "Technical Audit",
+        "description": "Analysis of your IT systems and opportunity identification"
+      },
+      {
+        "icon": "Map",
+        "title": "Digital Roadmap",
+        "description": "Strategic roadmap and prioritization"
+      },
+      {
+        "icon": "Layers",
+        "title": "IT Architecture",
+        "description": "Design of optimal technical architecture"
+      },
+      {
+        "icon": "Code",
+        "title": "Technology Selection",
+        "description": "Advice on suitable technologies and tools"
+      },
+      {
+        "icon": "Users",
+        "title": "Project Management",
+        "description": "Methodological support and management"
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "ROI Optimization",
+        "description": "Maximizing value of your IT investments"
+      },
+      {
         "icon": "Shield",
-        "title": "Threat Detection",
-        "description": "Advanced threat detection and prevention"
+        "title": "Security & Compliance",
+        "description": "Cybersecurity and GDPR consulting"
       },
       {
-        "icon": "Lock",
-        "title": "Data Encryption",
-        "description": "End-to-end encryption for all data"
-      },
-      {
-        "icon": "Shield",
-        "title": "Compliance Management",
-        "description": "Automated compliance monitoring and reporting"
-      },
-      {
-        "icon": "Zap",
-        "title": "Real-time Monitoring",
-        "description": "Continuous security monitoring and alerts"
+        "icon": "GraduationCap",
+        "title": "Training & Change Management",
+        "description": "Change support and skills development"
       }
     ],
     "benefits": [
       {
-        "metric": "99.9%",
-        "label": "Threat Detection",
-        "description": "High accuracy threat detection"
+        "metric": "60+",
+        "label": "Consulting Missions",
+        "description": "Companies supported"
+      },
+      {
+        "metric": "100%",
+        "label": "Customized",
+        "description": "Tailored approach"
+      },
+      {
+        "metric": "Optimized ROI",
+        "label": "Investments",
+        "description": "IT maximized"
+      },
+      {
+        "metric": "Expert",
+        "label": "Support",
+        "description": "By senior consultants"
+      }
+    ],
+    "benefitsList": [
+      "Industry and technical expertise",
+      "Proven methodology (Agile, Lean)",
+      "Strategic and operational vision",
+      "End-to-end support"
+    ],
+    "featuresList": ["Audit", "Strategy", "Management"],
+    "image": "architecture-illustration",
+    "link": "/solutions/digital-strategy-consulting",
+    "reverse": false,
+    "ctaTitle": "Define Your Digital Strategy",
+    "ctaDescription": "Let's discuss your challenges and objectives to build your roadmap",
+    "ctaButton": "Free Initial Consultation",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "security-compliance",
+    "icon": "Shield",
+    "title": "Security & Compliance",
+    "subtitle": "Secure your applications and data with cybersecurity and regulatory compliance solutions",
+    "badge": "Security",
+    "badgeIcon": "Shield",
+    "category": "Infrastructure",
+    "description": "We secure your applications and infrastructures while ensuring compliance with regulations.",
+    "overview": [
+      "Data security and regulatory compliance are critical issues. Our cybersecurity experts support you in securing your applications, GDPR compliance, and implementing security best practices.",
+      "Security audit, penetration testing, compliance implementation, identity management, encryption - we cover all aspects of application and infrastructure security."
+    ],
+    "features": [
+      {
+        "icon": "Search",
+        "title": "Security Audit",
+        "description": "Complete analysis of your current security"
+      },
+      {
+        "icon": "Shield",
+        "title": "Application Security",
+        "description": "Secure coding, penetration testing, OWASP"
+      },
+      {
+        "icon": "Lock",
+        "title": "Encryption & Authentication",
+        "description": "Data protection and secure access"
+      },
+      {
+        "icon": "FileCheck",
+        "title": "GDPR Compliance",
+        "description": "Regulatory compliance implementation"
+      },
+      {
+        "icon": "Eye",
+        "title": "Security Monitoring",
+        "description": "Threat detection and alerting"
+      },
+      {
+        "icon": "Users",
+        "title": "IAM & SSO",
+        "description": "Identity management and single sign-on"
+      },
+      {
+        "icon": "Database",
+        "title": "Data Security",
+        "description": "Backup, recovery, anonymization"
+      },
+      {
+        "icon": "GraduationCap",
+        "title": "Security Awareness",
+        "description": "Security training for your teams"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "20+",
+        "label": "Security Audits",
+        "description": "Successfully completed"
       },
       {
         "metric": "100%",
         "label": "Compliance",
-        "description": "Full regulatory compliance"
+        "description": "GDPR guaranteed"
       },
       {
         "metric": "0",
-        "label": "Data Breaches",
-        "description": "Zero tolerance for breaches"
+        "label": "Breaches",
+        "description": "On our secured projects"
       },
       {
-        "metric": "24/7",
-        "label": "Security Ops",
-        "description": "Round-the-clock security operations"
+        "metric": "Proactive",
+        "label": "Approach",
+        "description": "Security from design"
       }
     ],
     "benefitsList": [
-      "Advanced threat detection",
-      "End-to-end encryption",
-      "Compliance automation",
-      "Real-time security monitoring"
+      "Certified cybersecurity expertise",
+      "Security by Design approach",
+      "Guaranteed regulatory compliance",
+      "Continuous threat monitoring"
     ],
-    "featuresList": ["Threat Detection", "Encryption", "Compliance"],
+    "featuresList": ["Audit", "GDPR", "Protection"],
     "image": "architecture-illustration",
-    "link": "/solutions/security",
-    "reverse": false,
-    "ctaTitle": "Secure Your Digital Assets",
-    "ctaDescription": "Implement enterprise-grade security solutions for your organization",
-    "ctaButton": "Secure Now",
-    "createdAt": "2024-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "performance",
-    "icon": "Zap",
-    "title": "Performance Optimizer",
-    "subtitle": "Optimize application performance with real-time monitoring, bottleneck detection, and AI recommendations",
-    "badge": "Performance",
-    "badgeIcon": "Zap",
-    "category": "Data Analytics",
-    "description": "Optimize application performance with real-time monitoring, bottleneck detection, and AI recommendations.",
-    "overview": [
-      "Our Performance Optimizer uses AI-driven insights to identify bottlenecks, optimize resource usage, and ensure peak application performance.",
-      "Real-time monitoring and intelligent recommendations help maintain optimal system performance and user experience."
-    ],
-    "features": [
-      {
-        "icon": "Zap",
-        "title": "Performance Monitoring",
-        "description": "Real-time performance tracking and analysis"
-      },
-      {
-        "icon": "Brain",
-        "title": "AI Optimization",
-        "description": "AI-powered performance optimization recommendations"
-      },
-      {
-        "icon": "TrendingUp",
-        "title": "Bottleneck Detection",
-        "description": "Automatic identification of performance bottlenecks"
-      },
-      {
-        "icon": "BarChart3",
-        "title": "Performance Analytics",
-        "description": "Detailed performance metrics and reporting"
-      }
-    ],
-    "benefits": [
-      {
-        "metric": "50%",
-        "label": "Faster Response",
-        "description": "Improved application response times"
-      },
-      {
-        "metric": "95%",
-        "label": "Uptime",
-        "description": "High system availability"
-      },
-      {
-        "metric": "30%",
-        "label": "Cost Reduction",
-        "description": "Optimized resource utilization"
-      },
-      {
-        "metric": "24/7",
-        "label": "Monitoring",
-        "description": "Continuous performance monitoring"
-      }
-    ],
-    "benefitsList": [
-      "Real-time performance monitoring",
-      "AI-driven optimization",
-      "Automatic bottleneck detection",
-      "Performance analytics"
-    ],
-    "featuresList": ["Real-time", "AI insights", "Optimization"],
-    "image": "dashboard-mockup",
-    "link": "/solutions/performance",
+    "link": "/solutions/security-compliance",
     "reverse": true,
-    "ctaTitle": "Optimize Your Performance",
-    "ctaDescription": "Enhance application performance with AI-driven optimization",
-    "ctaButton": "Optimize Now",
+    "ctaTitle": "Secure Your Information System",
+    "ctaDescription": "Protect your data and ensure regulatory compliance",
+    "ctaButton": "Security Audit",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   }
