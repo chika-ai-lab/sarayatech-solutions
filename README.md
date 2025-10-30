@@ -147,6 +147,32 @@ NODE_ENV=production node server/index.js
 - `npm run server` - Start Express server (port 3001)
 - `npm run server:dev` - Start with nodemon (auto-reload)
 
+## Docker Support
+
+The backend can be deployed using Docker for consistent environments.
+
+### Quick Start with Docker
+
+**Using Docker Compose (Recommended):**
+```bash
+docker-compose up -d
+```
+
+**Using Docker directly:**
+```bash
+docker build -t sarayatech-backend .
+docker run -d -p 3001:3001 --env-file .env sarayatech-backend
+```
+
+### Benefits
+- ✅ Consistent environment across all platforms
+- ✅ Easy scalability
+- ✅ Production-ready with security best practices
+- ✅ Health checks included
+- ✅ Minimal image size (~50MB)
+
+📦 **Full Docker Guide**: See [DOCKER.md](DOCKER.md) for comprehensive Docker documentation.
+
 ## Deployment
 
 📘 **See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment guide**
@@ -221,6 +247,7 @@ The contact page includes a professional contact form with:
 ## Documentation
 
 - 📘 [Deployment Guide](DEPLOYMENT.md) - Complete production deployment guide
+- 🐳 [Docker Guide](DOCKER.md) - Docker deployment and containerization
 - 📧 [Server Documentation](server/README.md) - Backend setup and email configuration
 - 🎨 [Component Library](src/components/ui/) - shadcn/ui components
 

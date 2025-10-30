@@ -10,11 +10,12 @@ Complete guide for deploying the SarayaTech Solutions website to production.
 2. [Prerequisites](#prerequisites)
 3. [Frontend Deployment (Vercel)](#frontend-deployment-vercel)
 4. [Backend Deployment (Railway/Render)](#backend-deployment-railwayrender)
-5. [Email Configuration](#email-configuration)
-6. [Environment Variables](#environment-variables)
-7. [Custom Domain Setup](#custom-domain-setup)
-8. [Post-Deployment Checklist](#post-deployment-checklist)
-9. [Troubleshooting](#troubleshooting)
+5. [Docker Deployment](#docker-deployment)
+6. [Email Configuration](#email-configuration)
+7. [Environment Variables](#environment-variables)
+8. [Custom Domain Setup](#custom-domain-setup)
+9. [Post-Deployment Checklist](#post-deployment-checklist)
+10. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -186,6 +187,162 @@ Same as Railway configuration above.
 
 #### 4. Deploy
 Click **"Create Web Service"** - deployment starts automatically.
+
+---
+
+## Docker Deployment
+
+Deploy the backend using Docker for maximum portability and consistency.
+
+### Why Docker?
+
+- ✅ **Consistency**: Same environment everywhere (dev, staging, production)
+- ✅ **Isolation**: No dependency conflicts
+- ✅ **Portability**: Deploy anywhere Docker runs
+- ✅ **Scalability**: Easy to scale horizontally
+- ✅ **Security**: Non-root user, minimal attack surface
+
+### Quick Start with Docker Compose
+
+#### 1. Ensure Docker is Installed
+```bash
+docker --version
+docker-compose --version
+```
+
+If not installed: [Get Docker](https://docs.docker.com/get-docker/)
+
+#### 2. Configure Environment
+```bash
+cp .env.example .env
+# Edit .env with your SMTP credentials
+```
+
+#### 3. Start Services
+```bash
+docker-compose up -d
+```
+
+Server runs at: `http://localhost:3001`
+
+#### 4. View Logs
+```bash
+docker-compose logs -f backend
+```
+
+#### 5. Stop Services
+```bash
+docker-compose down
+```
+
+### Build Docker Image Manually
+
+#### Build
+```bash
+docker build -t sarayatech-backend .
+```
+
+#### Run
+```bash
+docker run -d \
+  --name sarayatech-backend \
+  -p 3001:3001 \
+  --env-file .env \
+  sarayatech-backend
+```
+
+### Deploy to Production with Docker
+
+#### Option 1: Railway with Dockerfile
+
+Railway automatically detects and builds your Dockerfile:
+
+1. Push code with Dockerfile to GitHub
+2. Connect repo to Railway
+3. Railway builds Docker image automatically
+4. Add environment variables
+5. Deploy!
+
+#### Option 2: Render with Dockerfile
+
+1. Create new Web Service on Render
+2. Select your repository
+3. Render detects Dockerfile
+4. Configure environment variables
+5. Deploy
+
+#### Option 3: VPS with Docker
+
+Deploy to any VPS (DigitalOcean, AWS EC2, etc.):
+
+```bash
+# SSH into VPS
+ssh user@your-server.com
+
+# Install Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Clone repository
+git clone https://github.com/yourusername/sarayatech-solutions.git
+cd sarayatech-solutions
+
+# Configure environment
+nano .env
+
+# Start with Docker Compose
+docker-compose up -d
+
+# Optional: Setup Nginx reverse proxy
+sudo apt install nginx -y
+# Configure Nginx to proxy requests to localhost:3001
+```
+
+### Docker Image Features
+
+Our Dockerfile includes:
+- **Multi-stage build** - Optimized for production
+- **Alpine Linux** - Minimal image size (~50MB)
+- **Non-root user** - Enhanced security
+- **Health checks** - Automatic monitoring
+- **Production-ready** - Only production dependencies
+
+### Useful Docker Commands
+
+```bash
+# View running containers
+docker ps
+
+# View logs
+docker logs -f sarayatech-backend
+
+# Enter container shell
+docker exec -it sarayatech-backend sh
+
+# Restart container
+docker restart sarayatech-backend
+
+# Stop and remove
+docker stop sarayatech-backend
+docker rm sarayatech-backend
+
+# View resource usage
+docker stats
+```
+
+### Docker Health Check
+
+The container includes a health check endpoint:
+
+```bash
+# Check from inside container
+docker exec sarayatech-backend wget -q -O- http://localhost:3001/api/health
+
+# Check container health status
+docker inspect sarayatech-backend | grep -A 10 Health
+```
+
+📘 **Full Docker Guide**: See [DOCKER.md](DOCKER.md) for comprehensive Docker documentation.
 
 ---
 
