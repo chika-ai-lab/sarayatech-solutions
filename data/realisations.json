@@ -12,7 +12,7 @@
     "quote": "The BMV inspection platform has revolutionized how we handle vehicle inspections. The OCR technology and streamlined booking system have significantly improved our efficiency.",
     "author": "Marie Dubois",
     "role": "Operations Manager, BMV Inspection",
-    "image": "/images/placeholder-project.svg",
+    "image": "/images/BMV.png",
     "isActive": true,
     "link": "https://inspectionfast.com"
   },
@@ -63,7 +63,7 @@
     "quote": "The MIMAP platform has transformed our clinic operations. Managing consultations, prescriptions, and certificates is now seamless and efficient.",
     "author": "Dr. Mohamed Lemine",
     "role": "Medical Director, MIMAP",
-    "image": "/images/mimap.png",
+    "image": "/images/mimap.jpeg",
     "isActive": true,
     "link": "https://mimapeds.com/"
   },
@@ -80,7 +80,7 @@
     "quote": "ASTA has become the leading tech education platform in Senegal. Our graduates are highly sought after by employers across the region.",
     "author": "Professor Amadou Ba",
     "role": "Director, American Senegalese Tech Academy",
-    "image": "/images/placeholder-project.svg",
+    "image": "/images/ASTA.png",
     "isActive": true,
     "link": "https://asta-edu.com/"
   },
@@ -114,7 +114,7 @@
     "quote": "Our new website perfectly represents SarayaTech's expertise and innovation. It has significantly increased our project inquiries and brand visibility.",
     "author": "Cheikh Diop",
     "role": "CEO, SarayaTech Senegal",
-    "image": "/images/placeholder-project.svg",
+    "image": "/images/SarayaTechSenegal.png",
     "isActive": true,
     "link": "https://sarayatechsenegal.com/"
   }
