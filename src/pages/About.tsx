@@ -70,8 +70,8 @@ const About = () => {
               <span className="text-gold">Make a Difference</span>
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed">
-              Since 2020, we've been supporting organizations in their digital transformation
-              with expertise, passion and commitment.
+              Since 2020, we've been supporting organizations in their digital
+              transformation with expertise, passion and commitment.
             </p>
           </motion.div>
         </div>
@@ -91,19 +91,19 @@ const About = () => {
               <h2 className="text-4xl md:text-5xl font-bold">Our Mission</h2>
               <div className="space-y-4 text-lg text-secondary leading-relaxed">
                 <p>
-                  At SarayaTech, we believe technology should simplify, not complicate.
-                  Our mission is to design and develop custom digital solutions that
-                  precisely meet our clients' needs.
+                  At SarayaTech, we believe technology should simplify, not
+                  complicate. Our mission is to design and develop custom
+                  digital solutions that precisely meet our clients' needs.
                 </p>
                 <p>
-                  We support organizations across all sectors with their digital challenges,
-                  from strategy to implementation. Through our technical expertise, agile
-                  approach and unwavering commitment, we transform your ideas into
-                  concrete solutions.
+                  We support organizations across all sectors with their digital
+                  challenges, from strategy to implementation. Through our
+                  technical expertise, agile approach and unwavering commitment,
+                  we transform your ideas into concrete solutions.
                 </p>
                 <p>
-                  We've delivered over 85 projects for local and international clients,
-                  providing measurable and sustainable impact.
+                  We've delivered over 85 projects for local and international
+                  clients, providing measurable and sustainable impact.
                 </p>
               </div>
             </motion.div>
@@ -231,9 +231,14 @@ const About = () => {
                   className="h-64 bg-gradient-to-br from-primary/20 to-accent/20 flex items-end justify-center"
                   whileHover={{ backgroundPosition: ["0% 50%", "100% 50%"] }}
                 >
-                  <motion.div
-                    className="w-40 h-40 rounded-full bg-muted mb-4"
+                  <motion.img
+                    src={leader.image}
+                    alt={leader.name}
+                    className="w-40 h-40 rounded-full object-cover mb-4 border-4 border-white shadow-lg"
                     whileHover={{ scale: 1.05 }}
+                    onError={(e) => {
+                      e.currentTarget.src = "/images/placeholder-project.svg";
+                    }}
                   />
                 </motion.div>
                 <div className="p-6">
