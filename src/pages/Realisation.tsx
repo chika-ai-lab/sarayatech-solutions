@@ -45,7 +45,7 @@ const Realisation = () => {
               animate="visible"
             >
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-                Realisation
+                Recent Realisations
               </h1>
               <p className="text-xl md:text-2xl text-primary-foreground/90">
                 See how leading organizations achieve breakthrough results with

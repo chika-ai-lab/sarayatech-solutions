@@ -420,8 +420,9 @@ const SolutionDetails = () => {
                       </h2>
                       <div className="space-y-4 mb-8">
                         <p className="text-gray-600">
-                          See how our clients have transformed their business with
-                          custom solutions tailored to their specific needs.
+                          See how our clients have transformed their business
+                          with custom solutions tailored to their specific
+                          needs.
                         </p>
                       </div>
 
@@ -449,7 +450,10 @@ const SolutionDetails = () => {
                               "SarayaTech delivered a robust data platform that scales with our needs. Their agile approach and constant communication made the entire process smooth and efficient.",
                           },
                         ].map((testimonial, i) => (
-                          <div key={i} className="p-6 border rounded-lg bg-white">
+                          <div
+                            key={i}
+                            className="p-6 border rounded-lg bg-white"
+                          >
                             <div className="flex items-start gap-4 mb-4">
                               <img
                                 src={`https://i.pravatar.cc/48?img=${i + 10}`}
@@ -609,12 +613,11 @@ const SolutionDetails = () => {
                 </div>
 
                 <div className="space-y-3">
-                  <Button className="w-full bg-primary hover:bg-primary/90">
-                    Schedule a Consultation
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    View Case Studies
-                  </Button>
+                  <Link to="/contact">
+                    <Button className="w-full bg-primary hover:bg-primary/90">
+                      Schedule a Consultation
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
@@ -628,7 +631,9 @@ const SolutionDetails = () => {
                       <Users className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm mb-1">Expert Team</h4>
+                      <h4 className="font-semibold text-sm mb-1">
+                        Expert Team
+                      </h4>
                       <p className="text-xs text-gray-600">
                         20+ years of industry experience
                       </p>
@@ -640,7 +645,9 @@ const SolutionDetails = () => {
                       <Check className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm mb-1">Proven Track Record</h4>
+                      <h4 className="font-semibold text-sm mb-1">
+                        Proven Track Record
+                      </h4>
                       <p className="text-xs text-gray-600">
                         250+ successful projects delivered
                       </p>
@@ -652,7 +659,9 @@ const SolutionDetails = () => {
                       <Shield className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm mb-1">Quality Assurance</h4>
+                      <h4 className="font-semibold text-sm mb-1">
+                        Quality Assurance
+                      </h4>
                       <p className="text-xs text-gray-600">
                         97% client satisfaction rate
                       </p>
@@ -687,7 +696,10 @@ const SolutionDetails = () => {
                     </div>
                   </Link>
 
-                  <Link to="/solutions/digital-strategy-consulting" className="block">
+                  <Link
+                    to="/solutions/digital-strategy-consulting"
+                    className="block"
+                  >
                     <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors">
                       <div className="w-10 h-10 bg-purple-500 rounded-lg flex-shrink-0 flex items-center justify-center">
                         <Brain className="w-5 h-5 text-white" />
