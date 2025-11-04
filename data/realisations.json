@@ -98,7 +98,7 @@
     "author": "Mamadou Sow",
     "role": "IT Director, DGFPT",
     "image": "/images/placeholder-project.svg",
-    "isActive": true,
+    "isActive": false,
     "link": "https://dev.dgfpt.portal.sarayatechsenegal.com/"
   },
   {
