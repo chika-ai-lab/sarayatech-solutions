@@ -14,11 +14,15 @@ const Footer = () => {
               to="/"
               className="flex items-center space-x-3 transition-smooth hover:opacity-80"
             >
-              <img src="/logo.png" alt="Company Logo" className="h-16 w-auto" />
+              <img
+                src="/logo-white.png"
+                alt="Company Logo"
+                className="h-20 w-auto scale-125"
+              />
             </Link>
             <p className="text-sm text-primary-foreground/80 mb-6">
-              Your trusted partner for digital transformation.
-              Custom solutions and expert support.
+              Your trusted partner for digital transformation. Custom solutions
+              and expert support.
             </p>
             <div className="flex space-x-4">
               <a

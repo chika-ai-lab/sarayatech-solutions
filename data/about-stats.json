@@ -11,7 +11,7 @@
   {
     "id": "2",
     "icon": "Globe",
-    "value": "5+",
+    "value": "20+",
     "label": "Countries Served",
     "description": "Global presence with local expertise",
     "createdAt": "2024-01-01T00:00:00.000Z",
@@ -20,7 +20,7 @@
   {
     "id": "3",
     "icon": "Award",
-    "value": "5+",
+    "value": "20+",
     "label": "Years of Excellence",
     "description": "Delivering innovative solutions since 2020",
     "createdAt": "2024-01-01T00:00:00.000Z",

@@ -62,9 +62,8 @@ const Solutions = () => {
               Our <span className="text-primary">Services</span>
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              Discover our range of digital services and expertise.
-              Each service reflects our commitment to excellence and
-              innovation.
+              Discover our range of digital services and expertise. Each service
+              reflects our commitment to excellence and innovation.
             </p>
           </motion.div>
 
@@ -78,7 +77,7 @@ const Solutions = () => {
           >
             {[
               {
-                value: "85+",
+                value: "250+",
                 label: "Projects Delivered",
                 color: "text-primary",
               },
@@ -87,7 +86,7 @@ const Solutions = () => {
                 label: "Client Satisfaction",
                 color: "text-accent",
               },
-              { value: "5+", label: "Years Experience", color: "text-gold" },
+              { value: "20+", label: "Years Experience", color: "text-gold" },
             ].map((stat) => (
               <motion.div
                 key={stat.label}
@@ -240,8 +239,8 @@ const Solutions = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Let's collaborate to bring your vision to life. Contact us today
-            to discuss your needs and get a personalized quote.
+            Let's collaborate to bring your vision to life. Contact us today to
+            discuss your needs and get a personalized quote.
           </motion.p>
           <motion.div
             className="flex flex-wrap justify-center gap-4"

@@ -630,7 +630,7 @@ const SolutionDetails = () => {
                     <div>
                       <h4 className="font-semibold text-sm mb-1">Expert Team</h4>
                       <p className="text-xs text-gray-600">
-                        5+ years of industry experience
+                        20+ years of industry experience
                       </p>
                     </div>
                   </div>
@@ -642,7 +642,7 @@ const SolutionDetails = () => {
                     <div>
                       <h4 className="font-semibold text-sm mb-1">Proven Track Record</h4>
                       <p className="text-xs text-gray-600">
-                        85+ successful projects delivered
+                        250+ successful projects delivered
                       </p>
                     </div>
                   </div>

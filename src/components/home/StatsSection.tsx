@@ -39,7 +39,7 @@ const StatsSection = () => {
     },
     {
       icon: Globe,
-      value: "5+",
+      value: "20+",
       label: "Countries",
       description: "Global presence and support",
     },

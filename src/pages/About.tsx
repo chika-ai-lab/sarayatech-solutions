@@ -116,9 +116,9 @@ const About = () => {
               viewport={{ once: true }}
             >
               {[
-                { icon: Users, value: "85+", label: "Projects" },
+                { icon: Users, value: "250+", label: "Projects" },
                 { icon: Globe, value: "6+", label: "Industries" },
-                { icon: Award, value: "5+", label: "Years" },
+                { icon: Award, value: "20+", label: "Years" },
                 { icon: Zap, value: "97%", label: "Satisfaction" },
               ].map((stat) => {
                 const Icon = stat.icon;

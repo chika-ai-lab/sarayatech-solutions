@@ -11,8 +11,8 @@ import {
 } from "@/constants/animations";
 
 const STATS = [
-  { value: "85+", label: "Projects Delivered" },
-  { value: "5+", label: "Years Experience" },
+  { value: "250+", label: "Projects Delivered" },
+  { value: "20+", label: "Years Experience" },
   { value: "97%", label: "Client Satisfaction" },
 ];
 
@@ -56,7 +56,7 @@ const HeroSection = () => {
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
               <span className="text-sm font-medium">
-                85+ projects successfully delivered
+                250+ projects successfully delivered
               </span>
             </motion.div>
 
@@ -79,8 +79,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              We design and develop custom digital solutions to accelerate your growth.
-              From technical expertise to strategic consulting.{" "}
+              We design and develop custom digital solutions to accelerate your
+              growth. From technical expertise to strategic consulting.{" "}
               <span className="font-semibold text-gold">
                 97% client satisfaction
               </span>{" "}
