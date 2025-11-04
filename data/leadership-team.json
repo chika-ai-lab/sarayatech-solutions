@@ -1,37 +1,37 @@
 [
   {
     "id": "1",
-    "name": "Sarah Johnson",
-    "role": "Chief Executive Officer",
-    "bio": "Sarah brings over 15 years of experience in enterprise technology leadership, having previously served as CTO at Fortune 500 companies. She holds a Master's in Computer Science from MIT.",
-    "image": "/images/team/sarah-johnson.jpg",
+    "name": "Cheikh Ahmed Tidiani Top ",
+    "role": "Tech Lead",
+    "bio": "Tidiani has over 8 years of experience in full stack development, specializing in React/Node.js architectures. He has led multiple development teams on large-scale projects for Senegalese and international companies. Graduate of École Polytechnique de Thiès.",
+    "image": "/images/Tidiani.jpeg",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "2",
-    "name": "Michael Chen",
-    "role": "Chief Technology Officer",
-    "bio": "Michael is a seasoned technology executive with expertise in cloud architecture and digital transformation. He has led successful implementations across healthcare, finance, and manufacturing sectors.",
-    "image": "/images/team/michael-chen.jpg",
+    "name": "Souleymane Sanokho",
+    "role": "Senior Software Engineer",
+    "bio": "Souleymane is a passionate software engineer with solid expertise in full stack development. He masters modern technologies including React, Next.js, TypeScript and PostgreSQL. He has contributed to numerous open source projects and technical training programs in Senegal.",
+    "image": "/images/Sanokho.jpeg",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "3",
-    "name": "Emily Rodriguez",
-    "role": "Chief Operating Officer",
-    "bio": "Emily specializes in operational excellence and client relationship management. With a background in management consulting, she ensures our solutions deliver measurable business impact.",
-    "image": "/images/team/emily-rodriguez.jpg",
+    "name": "Issa Diané",
+    "role": "Senior Software Engineer",
+    "bio": "Issa specializes in developing high-performance and scalable web applications. With a degree in Computer Engineering from UCAD, she excels in creating intuitive user interfaces and robust backends using modern web technologies.",
+    "image": "/images/Issa.jpeg",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "4",
-    "name": "David Kim",
-    "role": "Chief Product Officer",
-    "bio": "David leads product strategy and innovation, focusing on creating solutions that address real-world enterprise challenges. He has a PhD in Information Systems and extensive experience in product development.",
-    "image": "/images/team/david-kim.jpg",
+    "name": "Baye Lam",
+    "role": "DevOps Engineer",
+    "bio": "Baye specializes in DevOps practices and cloud infrastructure management with over 6 years of experience. Expert in Kubernetes, Docker, CI/CD pipelines, and AWS/Azure cloud platforms, he has optimized deployment processes and infrastructure automation for companies across Senegal and West Africa.",
+    "image": "/images/placeholder-project.svg",
     "createdAt": "2024-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   }
